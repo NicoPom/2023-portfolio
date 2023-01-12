@@ -1,0 +1,15 @@
+.projects--section {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.project h4 {
+  margin-bottom: 1rem;
+}
+
+.project img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}

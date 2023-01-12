@@ -1,0 +1,33 @@
+.home--section {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.central--text {
+  width: 100%;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  text-align: right;
+}
+
+h3 {
+  text-align: left;
+}
+
+footer {
+  align-self: flex-end;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
