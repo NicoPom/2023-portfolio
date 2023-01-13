@@ -1,7 +1,5 @@
 .home--section {
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
+  /* height: 100dvh; */
   justify-content: flex-end;
 }
 
@@ -22,11 +20,11 @@ h3 {
   text-align: left;
 }
 
-footer {
+.continue--scroll--container {
   align-self: flex-end;
 }
 
-footer a {
+.continue--scroll--container a {
   display: flex;
   align-items: center;
   gap: 0.5rem;

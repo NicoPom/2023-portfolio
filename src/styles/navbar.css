@@ -1,0 +1,49 @@
+.navbar--section {
+  background-color: rgba(20, 19, 23, 0.5);
+
+  display: flex;
+  padding: 0.5em;
+  gap: 0.5em;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.navigation--container,
+.actions--container {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0.75em;
+  gap: 0.5em;
+}
+
+.navigation--container {
+  background-color: var(--davys-grey);
+  border-radius: 10px;
+}
+
+.actions--container {
+  background-color: var(--cultured);
+  border-radius: 10px;
+}
+
+nav {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: scrollVertically 1s ease-in-out;
+}
+
+@keyframes scrollVertically {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+ul {
+  list-style: none;
+}

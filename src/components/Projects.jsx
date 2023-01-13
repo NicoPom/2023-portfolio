@@ -5,7 +5,7 @@ import "../styles/projects.css";
 function Projects() {
   const projectsElements = projectsData.map((project) => {
     return (
-      <div className="project" key={project.id}>
+      <div className="project" key={project.id} id={`project${project.id}`}>
         <h4>{project.title}</h4>
         <img src={project.thumbnail} alt={project.alt} />
       </div>

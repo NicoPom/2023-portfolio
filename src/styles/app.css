@@ -7,10 +7,6 @@
   box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-}
-
 /* colors */
 
 :root {
@@ -66,6 +62,7 @@ body {
   font-weight: 100;
   font-size: 1rem;
   color: var(--eerie-black);
+  letter-spacing: -0.02em;
 }
 
 h1 {
@@ -92,15 +89,32 @@ h4 {
   letter-spacing: -0.06em;
 }
 
-footer a {
+h5 {
+  font-size: clamp(1.5rem, 8vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+p {
+  line-height: 1.6rem;
+}
+
+.continue--scroll--container a,
+.back--scroll--container a {
   font-size: 1.125rem;
   text-decoration: none;
   color: var(--eerie-black);
   font-weight: 700;
 }
-footer a:hover,
-footer a:focus {
+.continue--scroll--container a:hover,
+.continue--scroll--container a:focus,
+.back--scroll--container a:hover,
+.back--scroll--container a:focus {
   text-decoration: underline;
+}
+
+nav {
+  color: var(--cultured);
 }
 
 /* Layout */
@@ -108,9 +122,20 @@ footer a:focus {
 .app {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 10rem;
 }
 
 section {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
+  border: 1px solid red;
+  min-height: 100dvh;
+}
+
+.paragraph--container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
 }

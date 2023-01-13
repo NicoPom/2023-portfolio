@@ -1,0 +1,9 @@
+.back--scroll--container {
+  margin-bottom: 2rem;
+}
+
+.back--scroll--container a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

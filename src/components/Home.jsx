@@ -8,12 +8,12 @@ function Home() {
         <h1>Portfolio</h1>
         <h2>Frontend Dev</h2>
       </div>
-      <footer>
+      <div className="continue--scroll--container">
         <a href="#projects--section">
           <span>See my work</span>
           <img src="src/assets/images/arrow_down.svg" alt="arrow_down_svg" />
         </a>
-      </footer>
+      </div>
     </section>
   );
 }
