@@ -32,3 +32,11 @@
 ul {
   list-style: none;
 }
+
+/*active link*/
+
+.active {
+  color: red;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}

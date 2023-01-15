@@ -3,9 +3,10 @@ import Infos from "./Infos";
 import "../styles/project.css";
 
 function Project(props) {
-  const { title, thumbnail, alt, description, stack, details } = props.project;
+  const { id, title, thumbnail, alt, description, stack, details } =
+    props.project;
   return (
-    <div className="project">
+    <div id={id} className="project">
       <h4>{title}</h4>
       <img src={thumbnail} alt={alt} />
       <p>{description}</p>

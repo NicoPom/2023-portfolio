@@ -87,6 +87,7 @@ h4 {
   font-size: clamp(2rem, 11vw, 4rem);
   font-weight: 400;
   letter-spacing: -0.06em;
+  text-transform: capitalize;
 }
 
 h5 {
@@ -99,18 +100,20 @@ p {
   line-height: 1.6rem;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
 .continue--scroll--container a,
 .back--scroll--container a {
   font-size: 1.125rem;
-  text-decoration: none;
   color: var(--eerie-black);
   font-weight: 700;
-}
-.continue--scroll--container a:hover,
-.continue--scroll--container a:focus,
-.back--scroll--container a:hover,
-.back--scroll--container a:focus {
-  text-decoration: underline;
 }
 
 nav {

@@ -3,7 +3,7 @@ import "../styles/about.css";
 
 function About() {
   return (
-    <section id="about--section" className="about">
+    <section id="about" className="about">
       <div className="back--scroll--container">
         <a href="#projects--section">
           <img src="src/assets/images/arrow_up.svg" alt="arrow_up_svg" />

@@ -1,7 +1,7 @@
 export const projectsData = [
   {
     id: "project1",
-    title: "Noir Damas Portfolio",
+    title: "noir damas portfolio",
     thumbnail:
       "src/assets/images/projectsThumbnail/mobile_mockup_noirdamas.png",
     alt: "noir damas project thumbnail",
@@ -14,7 +14,7 @@ export const projectsData = [
   },
   {
     id: "project2",
-    title: "Ratepunk Landing Page",
+    title: "ratepunk landing page",
     thumbnail: "src/assets/images/projectsThumbnail/mobile_mockup_ratepunk.png",
     alt: "ratepunk project thumbnail",
     videoURL: "",

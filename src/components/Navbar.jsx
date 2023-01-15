@@ -1,13 +1,40 @@
 import React from "react";
-import { projectsData } from "../assets/projectsData";
 
 import "../styles/navbar.css";
 
-function Navbar() {
-  const projectsElements = projectsData.map((project) => {
+function Navbar(props) {
+  const { projects, activeSection, setActiveSection } = props;
+  const sections = ["home", "about", "projects", "contacts"];
+
+  function handleClick(id) {
+    setActiveSection(id);
+  }
+
+  const projectsList = projects.map((project) => {
     return (
       <li key={project.id}>
-        <a href={`#project${project.id}`}>{project.title}</a>
+        <a
+          className={project.id === activeSection ? "active" : ""}
+          onClick={() => handleClick(project.id)}
+        >
+          {project.title}
+        </a>
+      </li>
+    );
+  });
+
+  const sectionElements = sections.map((section) => {
+    return (
+      <li key={section}>
+        <a
+          className={section === activeSection ? "active" : ""}
+          onClick={() => handleClick(section)}
+        >
+          {section}
+        </a>
+        {section === "projects" && (
+          <ul className="nav--projects--list">{projectsList}</ul>
+        )}
       </li>
     );
   });
@@ -16,23 +43,7 @@ function Navbar() {
     <div className="navbar--section">
       <div className="navigation--container">
         <nav>
-          <ul className="nav--main--list">
-            <li>
-              <a href="#about--section">about</a>
-            </li>
-            <li>
-              <a href="#projects--section">Projects</a>
-              <ul className="nav--sub--list">{projectsElements}</ul>
-            </li>
-            <li>
-              Contacts
-              <ul className="nav--sub--list">
-                <li>LinkedIn</li>
-                <li>GitHub</li>
-                <li>nicolaspomaresdev@gmail.com</li>
-              </ul>
-            </li>
-          </ul>
+          <ul className="nav--main--list">{sectionElements}</ul>
         </nav>
         <img src="src/assets/images/menu.svg" alt="menu_svg" />
       </div>

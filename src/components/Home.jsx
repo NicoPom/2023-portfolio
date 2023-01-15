@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/home.css";
 function Home() {
   return (
-    <section className="home--section">
+    <section id="home" className="home--section">
       <div className="central--text">
         <h3>Nicolas Pomares</h3>
         <h1>Portfolio</h1>
