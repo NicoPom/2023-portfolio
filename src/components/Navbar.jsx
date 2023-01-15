@@ -1,57 +1,57 @@
 import React from "react";
-
 import "../styles/navbar.css";
 
-function Navbar(props) {
-  const { projects, activeSection, setActiveSection } = props;
+const Navbar = ({ projects, activeSection, setActiveSection }) => {
   const sections = ["home", "about", "projects", "contacts"];
-
-  function handleClick(id) {
-    setActiveSection(id);
-  }
 
   const projectsList = projects.map((project) => {
     return (
-      <li key={project.id}>
-        <a
+      <li key={project.id} className="navbar--project__item">
+        <span
           className={project.id === activeSection ? "active" : ""}
-          onClick={() => handleClick(project.id)}
+          onClick={() => setActiveSection(project.id)}
         >
           {project.title}
-        </a>
+        </span>
       </li>
     );
   });
 
   const sectionElements = sections.map((section) => {
     return (
-      <li key={section}>
-        <a
+      <li key={section} className="navbar--section__item">
+        <span
           className={section === activeSection ? "active" : ""}
-          onClick={() => handleClick(section)}
+          onClick={() => setActiveSection(section)}
         >
           {section}
-        </a>
+        </span>
         {section === "projects" && (
-          <ul className="nav--projects--list">{projectsList}</ul>
+          <ul className="navbar--projects__list">{projectsList}</ul>
         )}
       </li>
     );
   });
 
   return (
-    <div className="navbar--section">
-      <div className="navigation--container">
+    <div className="navbar navbar--opened">
+      <div className="navbar__top">
         <nav>
-          <ul className="nav--main--list">{sectionElements}</ul>
+          <ul className="navbar__list">{sectionElements}</ul>
         </nav>
-        <img src="src/assets/images/menu.svg" alt="menu_svg" />
       </div>
-      <div className="actions--container">
-        <img src="src/assets/images/close.svg" alt="close_svg" />
+
+      <div className="navbar__bottom">
+        <div className="navbar__display">
+          <span className="navbar__display--text">{activeSection}</span>
+          <img src="src/assets/images/menu.svg" alt="menu_svg" />
+        </div>
+        <div className="navbar__actions">
+          <img src="src/assets/images/close.svg" alt="close_svg" />
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;

@@ -1,19 +1,13 @@
 import React from "react";
-
 import Project from "./Project";
 import "../styles/projects.css";
 
-function Projects(props) {
-  const { projects } = props;
-  const projectsElements = projects.map((project) => {
-    return <Project key={project.id} project={project} />;
-  });
-
-  return (
-    <section id="projects" className="projects--section">
-      {projectsElements}
-    </section>
-  );
-}
+const Projects = ({ projects }) => (
+  <section id="projects" className="projects--section">
+    {projects.map((project) => (
+      <Project key={project.id} project={project} />
+    ))}
+  </section>
+);
 
 export default Projects;

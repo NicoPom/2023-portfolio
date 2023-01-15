@@ -1,6 +1,6 @@
 export const projectsData = [
   {
-    id: "project1",
+    id: "noir damas portfolio",
     title: "noir damas portfolio",
     thumbnail:
       "src/assets/images/projectsThumbnail/mobile_mockup_noirdamas.png",
@@ -13,7 +13,7 @@ export const projectsData = [
       "React.js | HTML5 | CSS3 | Contentful CMS | React Router | GraphQL API",
   },
   {
-    id: "project2",
+    id: "ratepunk landing page",
     title: "ratepunk landing page",
     thumbnail: "src/assets/images/projectsThumbnail/mobile_mockup_ratepunk.png",
     alt: "ratepunk project thumbnail",

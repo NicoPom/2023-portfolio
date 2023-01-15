@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/infos.css";
 
-function Infos({ stack, details }) {
+const Infos = ({ stack, details }) => {
   const paragraphs = details.split("\n").map((paragraph, key) => {
     return <p key={key}>{paragraph}</p>;
   });
@@ -14,6 +14,6 @@ function Infos({ stack, details }) {
       <div className="paragraph--container">{paragraphs}</div>
     </div>
   );
-}
+};
 
 export default Infos;

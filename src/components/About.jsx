@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/about.css";
 
-function About() {
+const About = () => {
   return (
     <section id="about" className="about">
       <div className="back--scroll--container">
@@ -32,6 +32,6 @@ function About() {
       </div>
     </section>
   );
-}
+};
 
 export default About;
