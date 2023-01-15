@@ -29,21 +29,6 @@
   border-radius: 10px;
 }
 
-nav {
-  white-space: nowrap;
-  overflow: hidden;
-  animation: scrollVertically 1s ease-in-out;
-}
-
-@keyframes scrollVertically {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-}
-
 ul {
   list-style: none;
 }

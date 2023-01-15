@@ -1,15 +1,11 @@
 import React from "react";
 import { projectsData } from "../assets/projectsData";
+import Project from "./Project";
 import "../styles/projects.css";
 
 function Projects() {
   const projectsElements = projectsData.map((project) => {
-    return (
-      <div className="project" key={project.id} id={`project${project.id}`}>
-        <h4>{project.title}</h4>
-        <img src={project.thumbnail} alt={project.alt} />
-      </div>
-    );
+    return <Project key={project.id} project={project} />;
   });
 
   return (
