@@ -53,6 +53,7 @@
 
 .navbar__display {
   width: 100%;
+  white-space: nowrap;
 }
 
 .navbar__actions {
@@ -65,9 +66,15 @@ ul {
 
 /*active link*/
 
+li span {
+  opacity: 0.8;
+  transition: all 1s ease;
+}
+
 .active {
   color: var(--cultured);
-  font-weight: 400;
+  opacity: 1;
+  transition: all 1s ease;
 }
 
 /* opened navbar */

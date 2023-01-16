@@ -1,8 +1,11 @@
 import React from "react";
+import ActionButton from "./ActionButton";
+
 import "../styles/navbar.css";
 
 const Navbar = ({ projects, activeSection, setActiveSection }) => {
   const sections = ["home", "about", "projects", "contacts"];
+  const [isOpened, setIsOpened] = React.useState(false);
 
   const projectsList = projects.map((project) => {
     return (
@@ -33,22 +36,36 @@ const Navbar = ({ projects, activeSection, setActiveSection }) => {
     );
   });
 
+  const actionButtonElement = projects.map((project) => {
+    if (project.id === activeSection) {
+      return (
+        <ActionButton
+          key={project.id}
+          activeSection={activeSection}
+          isOpened={isOpened}
+          project={project}
+        />
+      );
+    }
+    return null;
+  });
+
   return (
-    <div className="navbar navbar--opened">
-      <div className="navbar__top">
-        <nav>
-          <ul className="navbar__list">{sectionElements}</ul>
-        </nav>
-      </div>
+    <div className={`navbar ${isOpened ? "navbar--opened" : ""}`}>
+      {isOpened && (
+        <div className="navbar__top">
+          <nav>
+            <ul className="navbar__list">{sectionElements}</ul>
+          </nav>
+        </div>
+      )}
 
       <div className="navbar__bottom">
-        <div className="navbar__display">
+        <div className="navbar__display" onClick={() => setIsOpened(!isOpened)}>
           <span className="navbar__display--text">{activeSection}</span>
           <img src="src/assets/images/menu.svg" alt="menu_svg" />
         </div>
-        <div className="navbar__actions">
-          <img src="src/assets/images/close.svg" alt="close_svg" />
-        </div>
+        {actionButtonElement}
       </div>
     </div>
   );
