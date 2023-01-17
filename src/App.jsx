@@ -11,44 +11,31 @@ import sections from "./assets/sections";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
-  const [scrollingTimeout, setScrollingTimeout] = useState(null);
+
+  const handleClick = (id) => {
+    setActiveSection(id);
+    const sectionEl = document.getElementById(id);
+    sectionEl.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (scrollingTimeout) {
-        clearTimeout(scrollingTimeout);
-      }
-      setScrollingTimeout(
-        setTimeout(() => {
-          sections.forEach((section) => {
-            const el = document.getElementById(section);
-            if (el) {
-              const rect = el.getBoundingClientRect();
-              if (rect.top >= 0 && rect.top <= window.innerHeight) {
-                setActiveSection(section);
-              }
-            }
-          });
-        }, 50)
-      );
+      sections.forEach((section) => {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top <= window.innerHeight) {
+            setActiveSection(section);
+          }
+        }
+      });
     };
 
     document.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, [activeSection, setActiveSection, scrollingTimeout]);
-
-  const handleClick = (id) => {
-    setActiveSection(id);
-  };
-
-  useEffect(() => {
-    const sectionEl = document.getElementById(activeSection);
-    if (sectionEl) {
-      sectionEl.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [activeSection]);
+  }, [activeSection, setActiveSection]);
 
   return (
     <div className="app">
