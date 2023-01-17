@@ -43,6 +43,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     if (project.id === activeSection) {
       return (
         <ActionButton
+          key={project.id}
           activeSection={activeSection}
           isOpened={isOpened}
           project={project}

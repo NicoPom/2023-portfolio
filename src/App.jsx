@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Navbar from "./components/Navbar";
 
 import { sectionsData } from "./assets/sections";
+import { projectsData } from "./assets/projects";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -25,6 +26,15 @@ const App = () => {
           const rect = el.getBoundingClientRect();
           if (rect.top >= 0 && rect.top <= window.innerHeight) {
             setActiveSection(section.id);
+          }
+        }
+      });
+      projectsData.forEach((project) => {
+        const el = document.getElementById(project.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top <= window.innerHeight) {
+            setActiveSection(project.id);
           }
         }
       });

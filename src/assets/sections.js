@@ -4,13 +4,14 @@ const sectionsData = [
   {
     id: "home",
   },
-  {
-    id: "about",
-  },
+
   {
     id: "projects",
 
     projects: projectsData,
+  },
+  {
+    id: "about",
   },
   {
     id: "contact",
