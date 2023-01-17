@@ -21,7 +21,7 @@ export const projectsData = [
     liveSite: "https://ratepunk.netlify.app/",
     github: "https://github.com/NicoPom/ratepunk-landing-page",
     details:
-      "For this project, I created a landing page for an browser extension company, using React.JS, HTML and CSS. I implemented an email input validation on the frontend side.",
+      "For this project, I created a landing page for a browser extension company, using React.JS, HTML and CSS. I implemented an email input validation on the frontend side.",
     stack: "React.js | HTML5 | CSS3 | SASS | Netlify",
   },
 ];

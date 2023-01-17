@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
-import "./styles/app.css";
+import { InfoContext } from "./hooks/context";
 
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Navbar from "./components/Navbar";
 
+import "./styles/app.css";
+
 import { sectionsData } from "./assets/sections";
 import { projectsData } from "./assets/projects";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const { isInfoOpen, toggleInfo } = React.useContext(InfoContext);
 
   const handleClick = (id) => {
     setActiveSection(id);
@@ -36,7 +39,7 @@ const App = () => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, [activeSection, setActiveSection]);
-
+  console.log(isInfoOpen);
   return (
     <div className="app">
       <Home />

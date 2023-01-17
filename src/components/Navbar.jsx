@@ -6,38 +6,34 @@ import { sectionsData } from "../assets/sections";
 import "../styles/navbar.css";
 
 const Navbar = ({ activeSection, setActiveSection }) => {
-  const [isOpened, setIsOpened] = React.useState(false);
+  const [navIsOpen, setNavIsOpen] = React.useState(false);
 
-  const projectsList = projectsData.map((project) => {
-    return (
-      <li key={project.id} className="navbar--project__item">
-        <span
-          className={project.id === activeSection ? "active" : ""}
-          onClick={() => setActiveSection(project.id)}
-        >
-          {project.title}
-        </span>
-      </li>
-    );
-  });
+  const projectsList = projectsData.map((project) => (
+    <li key={project.id} className="navbar--project__item">
+      <span
+        className={project.id === activeSection ? "active" : ""}
+        onClick={() => setActiveSection(project.id)}
+      >
+        {project.title}
+      </span>
+    </li>
+  ));
 
-  const sectionList = sectionsData.map((section) => {
-    return (
-      <li className="navbar--section__item" key={section.id}>
-        <span
-          className={section.id === activeSection ? "active" : ""}
-          onClick={
-            section.id !== "contact" ? () => setActiveSection(section.id) : null
-          }
-        >
-          {section.id}
-        </span>
-        {section.id === "projects" && (
-          <ul className="navbar--projects__list">{projectsList}</ul>
-        )}
-      </li>
-    );
-  });
+  const sectionList = sectionsData.map((section) => (
+    <li className="navbar--section__item" key={section.id}>
+      <span
+        className={section.id === activeSection ? "active" : ""}
+        onClick={
+          section.id !== "contact" ? () => setActiveSection(section.id) : null
+        }
+      >
+        {section.id}
+      </span>
+      {section.id === "projects" && (
+        <ul className="navbar--projects__list">{projectsList}</ul>
+      )}
+    </li>
+  ));
 
   const actionButtonElement = projectsData.map((project) => {
     if (project.id === activeSection) {
@@ -45,7 +41,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         <ActionButton
           key={project.id}
           activeSection={activeSection}
-          isOpened={isOpened}
+          navIsOpen={navIsOpen}
           project={project}
         />
       );
@@ -54,8 +50,8 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   });
 
   return (
-    <div className={`navbar ${isOpened ? "navbar--opened" : ""}`}>
-      {isOpened && (
+    <div className={`navbar ${navIsOpen ? "navbar--opened" : ""}`}>
+      {navIsOpen && (
         <div className="navbar__top">
           <nav>
             <ul className="navbar__list">{sectionList}</ul>
@@ -64,7 +60,10 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       )}
 
       <div className="navbar__bottom">
-        <div className="navbar__display" onClick={() => setIsOpened(!isOpened)}>
+        <div
+          className="navbar__display"
+          onClick={() => setNavIsOpen(!navIsOpen)}
+        >
           <span className="navbar__display--text">{activeSection}</span>
           <img src="src/assets/images/menu.svg" alt="menu_svg" />
         </div>

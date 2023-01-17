@@ -7,12 +7,12 @@ const Infos = ({ stack, details }) => {
   });
 
   return (
-    <div className="project--infos">
+    <section className="project--infos">
       <h5>Stack</h5>
       <p className="stack--paragraph">{stack}</p>
       <h5>Details</h5>
       <div className="paragraph--container">{paragraphs}</div>
-    </div>
+    </section>
   );
 };
 
