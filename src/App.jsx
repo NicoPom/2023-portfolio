@@ -20,21 +20,12 @@ const App = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      sectionsData.forEach((section) => {
+      sectionsData.concat(projectsData).forEach((section) => {
         const el = document.getElementById(section.id);
         if (el) {
           const rect = el.getBoundingClientRect();
           if (rect.top >= 0 && rect.top <= window.innerHeight) {
             setActiveSection(section.id);
-          }
-        }
-      });
-      projectsData.forEach((project) => {
-        const el = document.getElementById(project.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top >= 0 && rect.top <= window.innerHeight) {
-            setActiveSection(project.id);
           }
         }
       });
