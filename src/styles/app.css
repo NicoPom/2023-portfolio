@@ -130,7 +130,7 @@ a {
 .app {
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 20rem;
 }
 
 section {

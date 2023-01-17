@@ -6,8 +6,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Navbar from "./components/Navbar";
 
-import { projectsData } from "./assets/projectsData";
-import sections from "./assets/sections";
+import { sectionsData } from "./assets/sections";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -20,12 +19,12 @@ const App = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      sections.forEach((section) => {
-        const el = document.getElementById(section);
+      sectionsData.forEach((section) => {
+        const el = document.getElementById(section.id);
         if (el) {
           const rect = el.getBoundingClientRect();
           if (rect.top >= 0 && rect.top <= window.innerHeight) {
-            setActiveSection(section);
+            setActiveSection(section.id);
           }
         }
       });
@@ -40,12 +39,12 @@ const App = () => {
   return (
     <div className="app">
       <Home />
-      <Projects projects={projectsData} />
+      <Projects />
       <About />
       <Navbar
         activeSection={activeSection}
         setActiveSection={handleClick}
-        projects={projectsData}
+        sectionsData={sectionsData}
       />
     </div>
   );

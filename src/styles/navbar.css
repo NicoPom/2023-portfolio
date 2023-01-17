@@ -67,7 +67,7 @@ ul {
 /*active link*/
 
 li span {
-  opacity: 0.8;
+  opacity: 0.7;
   transition: all 1s ease;
 }
 

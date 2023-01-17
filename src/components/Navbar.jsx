@@ -1,13 +1,14 @@
 import React from "react";
 import ActionButton from "./ActionButton";
+import { projectsData } from "../assets/projects";
+import { sectionsData } from "../assets/sections";
 
 import "../styles/navbar.css";
 
-const Navbar = ({ projects, activeSection, setActiveSection }) => {
-  const sections = ["home", "about", "projects", "contacts"];
+const Navbar = ({ activeSection, setActiveSection }) => {
   const [isOpened, setIsOpened] = React.useState(false);
 
-  const projectsList = projects.map((project) => {
+  const projectsList = projectsData.map((project) => {
     return (
       <li key={project.id} className="navbar--project__item">
         <span
@@ -20,27 +21,28 @@ const Navbar = ({ projects, activeSection, setActiveSection }) => {
     );
   });
 
-  const sectionElements = sections.map((section) => {
+  const sectionList = sectionsData.map((section) => {
     return (
-      <li key={section} className="navbar--section__item">
+      <li className="navbar--section__item" key={section.id}>
         <span
-          className={section === activeSection ? "active" : ""}
-          onClick={() => setActiveSection(section)}
+          className={section.id === activeSection ? "active" : ""}
+          onClick={
+            section.id !== "contact" ? () => setActiveSection(section.id) : null
+          }
         >
-          {section}
+          {section.id}
         </span>
-        {section === "projects" && (
+        {section.id === "projects" && (
           <ul className="navbar--projects__list">{projectsList}</ul>
         )}
       </li>
     );
   });
 
-  const actionButtonElement = projects.map((project) => {
+  const actionButtonElement = projectsData.map((project) => {
     if (project.id === activeSection) {
       return (
         <ActionButton
-          key={project.id}
           activeSection={activeSection}
           isOpened={isOpened}
           project={project}
@@ -55,7 +57,7 @@ const Navbar = ({ projects, activeSection, setActiveSection }) => {
       {isOpened && (
         <div className="navbar__top">
           <nav>
-            <ul className="navbar__list">{sectionElements}</ul>
+            <ul className="navbar__list">{sectionList}</ul>
           </nav>
         </div>
       )}

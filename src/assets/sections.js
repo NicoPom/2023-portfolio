@@ -1,10 +1,20 @@
-const sections = [
-  "home",
-  "about",
-  "projects",
-  "noir damas portfolio",
-  "ratepunk landing page",
-  "contact",
+import { projectsData } from "./projects";
+
+const sectionsData = [
+  {
+    id: "home",
+  },
+  {
+    id: "about",
+  },
+  {
+    id: "projects",
+
+    projects: projectsData,
+  },
+  {
+    id: "contact",
+  },
 ];
 
-export default sections;
+export { sectionsData };
