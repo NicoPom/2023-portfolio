@@ -108,7 +108,8 @@ a {
   font-weight: 700;
 }
 
-.navbar {
+.navbar,
+.navbar a {
   color: var(--light-gray);
 }
 
@@ -117,7 +118,7 @@ a {
   text-transform: uppercase;
 }
 
-.navbar--project__item {
+.navbar--sublist__item {
   font-size: 1.3rem;
   text-transform: lowercase;
 }
@@ -138,7 +139,7 @@ section {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   min-height: 100dvh;
 }
 

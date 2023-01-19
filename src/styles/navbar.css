@@ -37,11 +37,21 @@
   gap: 0.3em;
 }
 
-.navbar--projects__list {
-  display: flex;
+.navbar--sublist {
+  max-height: 0;
+
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* expanded sublists */
+
+.expanded {
+  max-height: 100px;
   flex-direction: column;
   gap: 0.2em;
   margin-bottom: 0.3em;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .navbar__display,

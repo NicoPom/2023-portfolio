@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ProjectContext } from "../hooks/context";
 
 import ActionButton from "./ActionButton";
@@ -10,8 +10,18 @@ import "../styles/navbar.css";
 const Navbar = ({ activeSection, setActiveSection }) => {
   const { isNavOpen, isInfoOpen, toggle } = useContext(ProjectContext);
 
+  const [expandedSections, setExpandedSections] = useState([]);
+
+  const toggleExpanded = (sectionId) => {
+    if (expandedSections.includes(sectionId)) {
+      setExpandedSections(expandedSections.filter((id) => id !== sectionId));
+    } else {
+      setExpandedSections([...expandedSections, sectionId]);
+    }
+  };
+
   const projectsList = projectsData.map((project) => (
-    <li key={project.id} className="navbar--project__item">
+    <li key={project.id} className="navbar--sublist__item">
       <span
         className={project.id === activeSection ? "active" : ""}
         onClick={() => setActiveSection(project.id)}
@@ -21,18 +31,59 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     </li>
   ));
 
+  const contactList = (
+    <ul className="navbar--contact__list">
+      <li className="navbar--sublist__item">
+        <span>
+          <a href="https://github.com/NicoPom" target="_blank">
+            GitHub
+          </a>
+        </span>
+      </li>
+      <li className="navbar--sublist__item">
+        <span>
+          <a
+            href="https://www.linkedin.com/in/nicolas-pomares-4a8535197/"
+            target={"_blank"}
+          >
+            LinkedIn
+          </a>
+        </span>
+      </li>
+      <li className="navbar--sublist__item">
+        <span>
+          <a href="mailto: nicolaspomaresdev@gmail.com" target={"_blank"}>
+            nicolaspomaresdev@gmail.com
+          </a>
+        </span>
+      </li>
+    </ul>
+  );
+
   const sectionList = sectionsData.map((section) => (
     <li className="navbar--section__item" key={section.id}>
       <span
         className={section.id === activeSection ? "active" : ""}
-        onClick={
-          section.id !== "contact" ? () => setActiveSection(section.id) : null
-        }
+        onClick={() => {
+          section.id !== "contact" &&
+            section.id !== "projects" &&
+            setActiveSection(section.id);
+          if (section.id === "projects" || section.id === "contact") {
+            toggleExpanded(section.id);
+          }
+        }}
       >
         {section.id}
       </span>
-      {section.id === "projects" && (
-        <ul className="navbar--projects__list">{projectsList}</ul>
+      {(section.id === "projects" || section.id === "contact") && (
+        <ul
+          className={`navbar--sublist ${
+            expandedSections.includes(section.id) ? "expanded" : ""
+          }`}
+        >
+          {section.id === "projects" && projectsList}
+          {section.id === "contact" && contactList}
+        </ul>
       )}
     </li>
   ));
