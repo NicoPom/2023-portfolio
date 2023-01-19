@@ -2,8 +2,12 @@ export const projectsData = [
   {
     id: "noir damas portfolio",
     title: "noir damas portfolio",
-    thumbnail:
-      "src/assets/images/projectsThumbnail/mobile_mockup_noirdamas.png",
+    thumbnail: {
+      mobile: "src/assets/images/projectsThumbnail/mobile_mockup_noirdamas.png",
+      tablet: "src/assets/images/projectsThumbnail/tablet_mockup_noirdamas.png",
+      desktop:
+        "src/assets/images/projectsThumbnail/desktop_mockup_noirdamas.png",
+    },
     alt: "noir damas project thumbnail",
     videoURL: "",
     liveSite: "https://noir-damas-secure.netlify.app/",
@@ -15,7 +19,12 @@ export const projectsData = [
   {
     id: "ratepunk landing page",
     title: "ratepunk landing page",
-    thumbnail: "src/assets/images/projectsThumbnail/mobile_mockup_ratepunk.png",
+    thumbnail: {
+      mobile: "src/assets/images/projectsThumbnail/mobile_mockup_ratepunk.png",
+      tablet: "src/assets/images/projectsThumbnail/tablet_mockup_ratepunk.png",
+      desktop:
+        "src/assets/images/projectsThumbnail/desktop_mockup_ratepunk.png",
+    },
     alt: "ratepunk project thumbnail",
     videoURL: "",
     liveSite: "https://ratepunk.netlify.app/",

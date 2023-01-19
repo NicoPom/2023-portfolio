@@ -38,20 +38,19 @@
 }
 
 .navbar--sublist {
-  max-height: 0;
-
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+  max-height: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  overflow-y: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
 /* expanded sublists */
 
 .expanded {
-  max-height: 100px;
-  flex-direction: column;
-  gap: 0.2em;
-  margin-bottom: 0.3em;
-  transition: max-height 0.3s ease-in-out;
+  max-height: 90px;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar__display,
@@ -81,6 +80,14 @@ ul {
 li span {
   opacity: 0.7;
   transition: all 1s ease;
+}
+
+@media (hover: hover) {
+  li span:hover {
+    color: var(--cultured);
+    opacity: 1;
+    transition: all 1s ease;
+  }
 }
 
 .active {
