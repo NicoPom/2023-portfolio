@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid blue;
+  min-height: 100dvh;
 }
 
 .project h4 {
@@ -12,6 +13,4 @@
 
 .project img {
   width: 80%;
-  display: block;
-  margin: 0 auto;
 }

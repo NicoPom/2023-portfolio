@@ -1,11 +1,11 @@
 import React from "react";
 import "../styles/about.css";
 
-const About = () => {
+const About = ({ setActiveSection }) => {
   return (
     <section id="about" className="about">
       <div className="back--scroll--container">
-        <a href="#projects--section">
+        <a onClick={() => setActiveSection("projects")}>
           <img src="src/assets/images/arrow_up.svg" alt="arrow_up_svg" />
           <span>Back to my work</span>
         </a>
