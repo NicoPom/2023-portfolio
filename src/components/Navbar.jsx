@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProjectContext } from "../hooks/context";
+
 import ActionButton from "./ActionButton";
 import { projectsData } from "../assets/projects";
 import { sectionsData } from "../assets/sections";
@@ -6,7 +8,7 @@ import { sectionsData } from "../assets/sections";
 import "../styles/navbar.css";
 
 const Navbar = ({ activeSection, setActiveSection }) => {
-  const [navIsOpen, setNavIsOpen] = React.useState(false);
+  const { isNavOpen, isInfoOpen, toggle } = useContext(ProjectContext);
 
   const projectsList = projectsData.map((project) => (
     <li key={project.id} className="navbar--project__item">
@@ -41,7 +43,6 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         <ActionButton
           key={project.id}
           activeSection={activeSection}
-          navIsOpen={navIsOpen}
           project={project}
         />
       );
@@ -50,8 +51,8 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   });
 
   return (
-    <div className={`navbar ${navIsOpen ? "navbar--opened" : ""}`}>
-      {navIsOpen && (
+    <div className={`navbar ${isNavOpen ? "navbar--opened" : ""}`}>
+      {isNavOpen && (
         <div className="navbar__top">
           <nav>
             <ul className="navbar__list">{sectionList}</ul>
@@ -60,14 +61,14 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       )}
 
       <div className="navbar__bottom">
-        <div
-          className="navbar__display"
-          onClick={() => setNavIsOpen(!navIsOpen)}
-        >
-          <span className="navbar__display--text">{activeSection}</span>
-          <img src="src/assets/images/menu.svg" alt="menu_svg" />
-        </div>
-        {actionButtonElement}
+        {!isInfoOpen[activeSection] && (
+          <div className="navbar__display" onClick={() => toggle("nav")}>
+            <span className="navbar__display--text">{activeSection}</span>
+            <img src="src/assets/images/menu.svg" alt="menu_svg" />
+          </div>
+        )}
+
+        {!isNavOpen && actionButtonElement}
       </div>
     </div>
   );

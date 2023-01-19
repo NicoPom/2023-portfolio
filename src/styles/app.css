@@ -131,7 +131,7 @@ a {
 .app {
   display: flex;
   flex-direction: column;
-  gap: 20rem;
+  gap: 10rem;
 }
 
 section {

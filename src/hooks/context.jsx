@@ -1,19 +1,32 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
-export const InfoContext = createContext();
+export const ProjectContext = createContext();
 
-const InfoContextProvider = (props) => {
+const ProjectContextProvider = (props) => {
   const [isInfoOpen, setIsInfoOpen] = useState({});
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const toggleInfo = (id) => {
-    setIsInfoOpen({ ...isInfoOpen, [id]: !isInfoOpen[id] });
+  const toggle = (type, id) => {
+    if (type === "info") {
+      setIsInfoOpen({ ...isInfoOpen, [id]: !isInfoOpen[id] });
+    } else if (type === "nav") {
+      setIsNavOpen(!isNavOpen);
+    }
   };
 
+  useEffect(() => {
+    if (Object.values(isInfoOpen).some((val) => val === true)) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isInfoOpen]);
+
   return (
-    <InfoContext.Provider value={{ isInfoOpen, toggleInfo }}>
+    <ProjectContext.Provider value={{ isInfoOpen, isNavOpen, toggle }}>
       {props.children}
-    </InfoContext.Provider>
+    </ProjectContext.Provider>
   );
 };
 
-export default InfoContextProvider;
+export default ProjectContextProvider;

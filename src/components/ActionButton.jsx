@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "../styles/navbar.css";
-import { InfoContext } from "../hooks/context";
+import { ProjectContext } from "../hooks/context";
 
 const ActionButton = ({ activeSection, navIsOpen, project }) => {
-  const { isInfoOpen, toggleInfo } = useContext(InfoContext);
+  const { isInfoOpen, toggle } = useContext(ProjectContext);
   if (
     !navIsOpen &&
     activeSection !== "home" &&
@@ -17,7 +17,7 @@ const ActionButton = ({ activeSection, navIsOpen, project }) => {
           <img
             src="src/assets/images/close.svg"
             alt="close_svg"
-            onClick={() => toggleInfo(activeSection)}
+            onClick={() => toggle("info", activeSection)}
           />
         )}
         {!isInfoOpen[activeSection] && (
@@ -25,7 +25,7 @@ const ActionButton = ({ activeSection, navIsOpen, project }) => {
             <img
               src="src/assets/images/infos.svg"
               alt="infos_svg"
-              onClick={() => toggleInfo(activeSection)}
+              onClick={() => toggle("info", activeSection)}
             />
             <a href={project.github}>
               <img src="src/assets/images/github.svg" alt="github_svg" />

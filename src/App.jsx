@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { InfoContext } from "./hooks/context";
 
 import Home from "./components/Home";
 import About from "./components/About";
@@ -13,7 +12,6 @@ import { projectsData } from "./assets/projects";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
-  const { isInfoOpen, toggleInfo } = React.useContext(InfoContext);
 
   const handleClick = (id) => {
     setActiveSection(id);
@@ -22,12 +20,16 @@ const App = () => {
   };
 
   useEffect(() => {
+    /**
+     * When the user scrolls, check if the top of the element is within 2/3 of the window height, and
+     * if so, set the active section to the id of the element.
+     */
     const handleScroll = () => {
       sectionsData.concat(projectsData).forEach((section) => {
         const el = document.getElementById(section.id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top >= 0 && rect.top <= window.innerHeight) {
+          if (rect.top >= 0 && rect.top <= (2 / 3) * window.innerHeight) {
             setActiveSection(section.id);
           }
         }
@@ -39,12 +41,12 @@ const App = () => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, [activeSection, setActiveSection]);
-  console.log(isInfoOpen);
+
   return (
     <div className="app">
-      <Home />
+      <Home setActiveSection={handleClick} />
       <Projects />
-      <About />
+      <About setActiveSection={handleClick} />
       <Navbar
         activeSection={activeSection}
         setActiveSection={handleClick}

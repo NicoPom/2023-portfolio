@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { InfoContext } from "../hooks/context";
+import { ProjectContext } from "../hooks/context";
 import Infos from "./Infos";
 import "../styles/project.css";
 
 const Project = ({
   project: { id, title, thumbnail, alt, description, stack, details },
 }) => {
-  const { isInfoOpen, toggleInfo } = useContext(InfoContext);
+  const { isInfoOpen } = useContext(ProjectContext);
 
   return (
     <div id={id} className="project">
