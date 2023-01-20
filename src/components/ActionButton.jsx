@@ -16,7 +16,7 @@ const ActionButton = ({ activeSection, navIsOpen, project }) => {
         {isInfoOpen[activeSection] && (
           <img
             className="clickable"
-            src="src/assets/images/close.svg"
+            src="assets/images/close.svg"
             alt="close_svg"
             onClick={() => toggle("info", activeSection)}
           />
@@ -25,15 +25,15 @@ const ActionButton = ({ activeSection, navIsOpen, project }) => {
           <>
             <img
               className="clickable"
-              src="src/assets/images/infos.svg"
+              src="assets/images/infos.svg"
               alt="infos_svg"
               onClick={() => toggle("info", activeSection)}
             />
             <a href={project.github}>
-              <img src="src/assets/images/github.svg" alt="github_svg" />
+              <img src="assets/images/github.svg" alt="github_svg" />
             </a>
             <a href={project.liveSite}>
-              <img src="src/assets/images/external.svg" alt="external_svg" />
+              <img src="assets/images/external.svg" alt="external_svg" />
             </a>
           </>
         )}

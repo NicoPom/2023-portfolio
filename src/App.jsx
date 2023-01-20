@@ -8,8 +8,8 @@ import Navbar from "./components/Navbar";
 
 import "./styles/app.css";
 
-import { sectionsData } from "./assets/sections";
-import { projectsData } from "./assets/projects";
+import { sectionsData } from "./data/sections";
+import { projectsData } from "./data/projects";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");

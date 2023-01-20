@@ -1,7 +1,7 @@
 import React from "react";
 import Project from "./Project";
 import "../styles/projects.css";
-import { projectsData } from "../assets/projects";
+import { projectsData } from "../data/projects";
 
 const Projects = () => (
   <section id="projects" className="projects--section">

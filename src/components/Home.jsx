@@ -11,7 +11,7 @@ const Home = ({ setActiveSection }) => (
     <div className="continue--scroll--container">
       <a onClick={() => setActiveSection("projects")}>
         <span>See my work</span>
-        <img src="src/assets/images/arrow_down.svg" alt="arrow_down_svg" />
+        <img src="assets/images/arrow_down.svg" alt="arrow_down_svg" />
       </a>
     </div>
   </section>

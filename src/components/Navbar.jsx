@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import { ProjectContext } from "../hooks/context";
 
 import ActionButton from "./ActionButton";
-import { projectsData } from "../assets/projects";
-import { sectionsData } from "../assets/sections";
+import { projectsData } from "../data/projects";
+import { sectionsData } from "../data/sections";
 
 import "../styles/navbar.css";
 
@@ -118,7 +118,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             onClick={() => toggle("nav")}
           >
             <span className="navbar__display--text">{activeSection}</span>
-            <img src="src/assets/images/menu.svg" alt="menu_svg" />
+            <img src="assets/images/menu.svg" alt="menu_svg" />
           </div>
         )}
 
