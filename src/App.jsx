@@ -32,7 +32,11 @@ const App = () => {
         const el = document.getElementById(section.id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top >= 0 && rect.top <= (2 / 3) * window.innerHeight) {
+          if (
+            //middle of the element is in the viewport
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          ) {
             setActiveSection(section.id);
           }
         }

@@ -9,6 +9,6 @@
 }
 
 .navbar__actions img {
-  width: clamp(1.4rem, 1vw, 2rem);
+  width: clamp(1.4em, 1.5vw, 1.8em);
   aspect-ratio: 1/1;
 }
