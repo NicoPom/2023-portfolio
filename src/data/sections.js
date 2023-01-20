@@ -1,5 +1,3 @@
-import { projectsData } from "./projects";
-
 const sectionsData = [
   {
     id: "home",

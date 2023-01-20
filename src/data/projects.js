@@ -3,12 +3,9 @@ export const projectsData = [
     id: "noir damas portfolio",
     title: "noir damas portfolio",
     thumbnail: {
-      mobile:
-        "public/assets/images/projectsThumbnail/mobile_mockup_noirdamas.png",
-      tablet:
-        "public/assets/images/projectsThumbnail/tablet_mockup_noirdamas.png",
-      desktop:
-        "public/assets/images/projectsThumbnail/desktop_mockup_noirdamas.png",
+      mobile: "assets/images/projectsThumbnail/mobile_mockup_noirdamas.png",
+      tablet: "assets/images/projectsThumbnail/tablet_mockup_noirdamas.png",
+      desktop: "assets/images/projectsThumbnail/desktop_mockup_noirdamas.png",
     },
     alt: "noir damas project thumbnail",
     videoURL: "",
@@ -22,12 +19,9 @@ export const projectsData = [
     id: "ratepunk landing page",
     title: "ratepunk landing page",
     thumbnail: {
-      mobile:
-        "public/assets/images/projectsThumbnail/mobile_mockup_ratepunk.png",
-      tablet:
-        "public/assets/images/projectsThumbnail/tablet_mockup_ratepunk.png",
-      desktop:
-        "public/assets/images/projectsThumbnail/desktop_mockup_ratepunk.png",
+      mobile: "assets/images/projectsThumbnail/mobile_mockup_ratepunk.png",
+      tablet: "assets/images/projectsThumbnail/tablet_mockup_ratepunk.png",
+      desktop: "assets/images/projectsThumbnail/desktop_mockup_ratepunk.png",
     },
     alt: "ratepunk project thumbnail",
     videoURL: "",
