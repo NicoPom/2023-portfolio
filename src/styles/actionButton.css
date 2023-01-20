@@ -1,0 +1,14 @@
+.navbar__actions {
+  background-color: var(--cultured);
+  gap: 0.8em;
+  border-radius: 10px;
+  padding: 0.5em 0.75em;
+  display: flex;
+
+  align-items: center;
+}
+
+.navbar__actions img {
+  width: clamp(1.4rem, 1vw, 2rem);
+  aspect-ratio: 1/1;
+}

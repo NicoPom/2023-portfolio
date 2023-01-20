@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { ProjectContext } from "./hooks/context";
 
 import Home from "./components/Home";
 import About from "./components/About";
@@ -12,9 +13,11 @@ import { projectsData } from "./assets/projects";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const { toggle, isNavOpen } = useContext(ProjectContext);
 
   const handleClick = (id) => {
     setActiveSection(id);
+    isNavOpen && toggle("nav");
     const sectionEl = document.getElementById(id);
     sectionEl.scrollIntoView({ behavior: "smooth" });
   };

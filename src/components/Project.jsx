@@ -10,10 +10,11 @@ const Project = ({
   const [src, setSrc] = useState(thumbnail.mobile);
 
   const handleResize = () => {
-    window.innerWidth > 768
-      ? setSrc(thumbnail.tablet)
-      : window.innerWidth > 1024
+    // handle the image size depending on the screen size
+    window.innerWidth > 1000
       ? setSrc(thumbnail.desktop)
+      : window.innerWidth > 700
+      ? setSrc(thumbnail.tablet)
       : setSrc(thumbnail.mobile);
   };
 

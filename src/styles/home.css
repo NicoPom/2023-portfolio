@@ -1,10 +1,11 @@
 .home--section {
-  /* height: 100dvh; */
   justify-content: flex-end;
+  align-items: center;
 }
 
 .central--text {
   width: 100%;
+  max-width: 1000px;
   text-align: center;
   flex: 1;
   display: flex;

@@ -13,21 +13,20 @@
 }
 
 .navbar__top,
-.navbar__display,
-.navbar__actions {
+.navbar__display {
   background-color: var(--davys-grey);
   border-radius: 10px;
   padding: 0.5em 0.75em;
 }
 
 .navbar__top {
+  min-width: 30vw;
   text-align: right;
   flex: 1;
 }
 
 .navbar__bottom {
   display: flex;
-  justify-content: space-between;
   gap: 0.5em;
 }
 
@@ -49,26 +48,17 @@
 /* expanded sublists */
 
 .expanded {
-  max-height: 90px;
+  max-height: 110px;
   transition: all 0.3s ease-in-out;
 }
 
-.navbar__display,
-.navbar__actions {
+.navbar__display {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.navbar__display {
   width: 100%;
   white-space: nowrap;
   gap: 0.5em;
-}
-
-.navbar__actions {
-  background-color: var(--cultured);
-  gap: 0.8em;
 }
 
 ul {
@@ -99,6 +89,5 @@ li span {
 /* opened navbar */
 
 .navbar--opened {
-  width: 90%;
   background-color: rgba(20, 19, 23, 0.5);
 }

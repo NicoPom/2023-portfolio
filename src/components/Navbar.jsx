@@ -113,7 +113,10 @@ const Navbar = ({ activeSection, setActiveSection }) => {
 
       <div className="navbar__bottom">
         {!isInfoOpen[activeSection] && (
-          <div className="navbar__display" onClick={() => toggle("nav")}>
+          <div
+            className="navbar__display clickable"
+            onClick={() => toggle("nav")}
+          >
             <span className="navbar__display--text">{activeSection}</span>
             <img src="src/assets/images/menu.svg" alt="menu_svg" />
           </div>

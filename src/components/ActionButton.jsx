@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "../styles/navbar.css";
+import "../styles/actionButton.css";
 import { ProjectContext } from "../hooks/context";
 
 const ActionButton = ({ activeSection, navIsOpen, project }) => {
@@ -15,6 +15,7 @@ const ActionButton = ({ activeSection, navIsOpen, project }) => {
       <div className="navbar__actions">
         {isInfoOpen[activeSection] && (
           <img
+            className="clickable"
             src="src/assets/images/close.svg"
             alt="close_svg"
             onClick={() => toggle("info", activeSection)}
@@ -23,6 +24,7 @@ const ActionButton = ({ activeSection, navIsOpen, project }) => {
         {!isInfoOpen[activeSection] && (
           <>
             <img
+              className="clickable"
               src="src/assets/images/infos.svg"
               alt="infos_svg"
               onClick={() => toggle("info", activeSection)}
