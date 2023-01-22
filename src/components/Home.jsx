@@ -8,9 +8,11 @@ const Home = ({ setActiveSection }) => (
       <h1>Portfolio</h1>
       <h2>Frontend Dev</h2>
     </div>
-    <div className="continue--scroll--container">
+    <div className="continue--scroll--container ">
       <a onClick={() => setActiveSection("projects")}>
-        <span>See my work</span>
+        <span className="scroll--span hover-underline-animation">
+          See my work
+        </span>
         <img src="assets/images/arrow_down.svg" alt="arrow_down_svg" />
       </a>
     </div>

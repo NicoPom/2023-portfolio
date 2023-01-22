@@ -34,7 +34,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   const contactList = (
     <ul className="navbar--contact__list">
       <li className="navbar--sublist__item">
-        <span>
+        <span className="hover-underline-animation">
           <a
             href="https://github.com/NicoPom"
             target="_blank"
@@ -45,7 +45,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         </span>
       </li>
       <li className="navbar--sublist__item">
-        <span>
+        <span className="hover-underline-animation">
           <a
             href="https://www.linkedin.com/in/nicolas-pomares-4a8535197/"
             target="_blank"
@@ -56,7 +56,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         </span>
       </li>
       <li className="navbar--sublist__item">
-        <span>
+        <span className="hover-underline-animation">
           <a
             href="mailto: nicolaspomaresdev@gmail.com"
             target="_blank"
@@ -110,31 +110,32 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     return null;
   });
 
-  return (
-    <div className={`navbar ${isNavOpen ? "navbar--opened" : ""}`}>
-      {isNavOpen && (
-        <div className="navbar__top">
-          <nav>
-            <ul className="navbar__list">{sectionList}</ul>
-          </nav>
-        </div>
-      )}
-
-      <div className="navbar__bottom">
-        {!isInfoOpen[activeSection] && (
-          <div
-            className="navbar__display clickable"
-            onClick={() => toggle("nav")}
-          >
-            <span className="navbar__display--text">{activeSection}</span>
-            <img src="assets/images/menu.svg" alt="menu_svg" />
+  if (activeSection !== "home")
+    return (
+      <div className={`navbar ${isNavOpen ? "navbar--opened" : ""}`}>
+        {isNavOpen && (
+          <div className="navbar__top">
+            <nav>
+              <ul className="navbar__list">{sectionList}</ul>
+            </nav>
           </div>
         )}
 
-        {!isNavOpen && actionButtonElement}
+        <div className="navbar__bottom">
+          {!isInfoOpen[activeSection] && (
+            <div
+              className="navbar__display clickable"
+              onClick={() => toggle("nav")}
+            >
+              <span className="navbar__display--text">{activeSection}</span>
+              <img src="assets/images/menu.svg" alt="menu_svg" />
+            </div>
+          )}
+
+          {!isNavOpen && actionButtonElement}
+        </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default Navbar;

@@ -112,18 +112,11 @@ p {
 }
 
 a {
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
-@media (hover: hover) {
-  a:hover {
-    text-decoration: underline;
-  }
-}
-
-.continue--scroll--container a,
-.back--scroll--container a {
+.scroll--span {
   font-size: clamp(1.125rem, 4.5vw, 1.7rem);
   color: var(--eerie-black);
   font-weight: 700;
@@ -169,4 +162,34 @@ section {
   flex-direction: column;
   max-width: 70ch;
   gap: clamp(1rem, 1.5vw, 2rem);
+}
+
+/* underline animation */
+
+@media (hover: hover) {
+  .hover-underline-animation {
+    position: relative;
+  }
+
+  .hover-underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--eerie-black);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  nav .hover-underline-animation::after {
+    background-color: var(--cultured);
+  }
 }

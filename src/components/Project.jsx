@@ -4,13 +4,13 @@ import Infos from "./Infos";
 import "../styles/project.css";
 
 const Project = ({
-  project: { id, title, thumbnail, alt, description, stack, details, liveSite },
+  project: { id, title, thumbnail, alt, stack, details, liveSite },
 }) => {
   const { isInfoOpen } = useContext(ProjectContext);
   const [src, setSrc] = useState(thumbnail.mobile);
 
   const handleResize = () => {
-    // handle the image size depending on the screen size
+    // handle the image source depending on the screen size
     window.innerWidth > 1000
       ? setSrc(thumbnail.desktop)
       : window.innerWidth > 700
