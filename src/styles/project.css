@@ -3,16 +3,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid blue; */
-  min-height: 100dvh;
+  border: 1px solid blue;
+
+  gap: 1rem;
 }
 
 .project h4 {
-  margin-bottom: 1rem;
   align-self: start;
 }
 
+.project a {
+  max-width: 70%;
+}
+
 .project img {
-  width: 80%;
-  margin: 0 auto;
+  max-width: 100%;
 }

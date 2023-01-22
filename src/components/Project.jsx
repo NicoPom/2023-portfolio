@@ -32,7 +32,6 @@ const Project = ({
       <a href={liveSite} target="_blank" rel="noopener noreferrer">
         <img src={src} alt={alt} />
       </a>
-      <p>{description}</p>
       {isInfoOpen[id] && <Infos stack={stack} details={details} />}
     </div>
   );
