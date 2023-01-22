@@ -10,7 +10,7 @@ export const projectsData = [
     alt: "noir damas project thumbnail",
     videoURL: "",
     liveSite: "https://noir-damas-secure.netlify.app/",
-    github: "https://github.com/NicoPom/noir-damas-secure",
+    github: "https://github.com/NicoPom/Noir-Damas-Portfolio",
     details: `For this project, I worked with a blacksmith who needed a way to showcase his work online. I decided to use a headless content management system (CMS) to allow the blacksmith to easily upload photos of his creations himself.\n I first worked with the blacksmith to determine his needs and design preferences for the website. I then set up the CMS and configured it to allow for easy photo uploads. I also made sure that the website was mobile-responsive and had a clean, professional design that would showcase the blacksmith's work effectively.\n Overall, this was a rewarding project that allowed me to utilize my skills in web development and CMS management to help a small business owner showcase their talents online. The blacksmith was very happy with the final result and has received positive feedback from customers who have viewed the website.`,
     stack:
       "React.js | HTML5 | CSS3 | Contentful CMS | React Router | GraphQL API",
