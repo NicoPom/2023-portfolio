@@ -69,21 +69,21 @@ ul {
 
 li span {
   opacity: 0.7;
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 @media (hover: hover) {
   li span:hover {
     color: var(--cultured);
     opacity: 1;
-    transition: all 1s ease;
+    transition: all 0.3s ease;
   }
 }
 
 .active {
   color: var(--cultured);
   opacity: 1;
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 /* opened navbar */
