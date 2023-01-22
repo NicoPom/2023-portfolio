@@ -31,4 +31,23 @@ export const projectsData = [
       "For this project, I created a landing page for a browser extension company, using React.JS, HTML and CSS. I implemented an email input validation on the frontend side.",
     stack: "React.js | HTML5 | CSS3 | SASS | Netlify",
   },
+  {
+    id: "portfolio nicolas pomares",
+    title: "portfolio nicolas pomares",
+    thumbnail: {
+      mobile:
+        "assets/images/projectsThumbnail/mobile_mockup_portfolio_nicolaspomares.png",
+      tablet:
+        "assets/images/projectsThumbnail/tablet_mockup_portfolio_nicolaspomares.png",
+      desktop:
+        "assets/images/projectsThumbnail/desktop_mockup_portfolio_nicolaspomares.png",
+    },
+    alt: "portfolio nicolas pomares project thumbnail",
+    videoURL: "",
+    liveSite: "https://www.nicolaspomares.com/",
+    github: "https://github.com/NicoPom/2023-portfolio",
+    details:
+      "This is a portfolio website that I created to showcase my work as a web developer. I used React.JS, HTML and CSS to create this website. ",
+    stack: "React.js | HTML5 | CSS3 | Netlify",
+  },
 ];
