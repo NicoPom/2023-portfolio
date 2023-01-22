@@ -5,6 +5,7 @@
   left: 0;
   background-color: rgba(211, 209, 211, 0.95);
   height: 100%;
+  width: 100%;
 
   overflow: auto;
   padding-bottom: 5rem;
