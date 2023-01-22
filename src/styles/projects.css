@@ -1,5 +1,5 @@
 .projects--section {
   display: flex;
   flex-direction: column;
-  gap: 40dvh;
+  gap: 30dvh;
 }
