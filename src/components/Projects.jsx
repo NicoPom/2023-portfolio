@@ -5,9 +5,11 @@ import { projectsData } from "../data/projects";
 
 const Projects = () => (
   <section id="projects" className="projects--section">
-    {projectsData.map((project) => (
-      <Project key={project.id} project={project} />
-    ))}
+    {projectsData.map(
+      (project) => (
+        console.log(project), (<Project key={project.id} project={project} />)
+      )
+    )}
   </section>
 );
 

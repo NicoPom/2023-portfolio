@@ -4,7 +4,7 @@ import Infos from "./Infos";
 import "../styles/project.css";
 
 const Project = ({
-  project: { id, title, thumbnail, alt, description, stack, details },
+  project: { id, title, thumbnail, alt, description, stack, details, liveSite },
 }) => {
   const { isInfoOpen } = useContext(ProjectContext);
   const [src, setSrc] = useState(thumbnail.mobile);
@@ -29,7 +29,9 @@ const Project = ({
   return (
     <div id={id} className="project">
       <h4>{title}</h4>
-      <img src={src} alt={alt} />
+      <a href={liveSite} target="_blank" rel="noopener noreferrer">
+        <img src={src} alt={alt} />
+      </a>
       <p>{description}</p>
       {isInfoOpen[id] && <Infos stack={stack} details={details} />}
     </div>

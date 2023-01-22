@@ -35,7 +35,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     <ul className="navbar--contact__list">
       <li className="navbar--sublist__item">
         <span>
-          <a href="https://github.com/NicoPom" target="_blank">
+          <a
+            href="https://github.com/NicoPom"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </a>
         </span>
@@ -44,7 +48,8 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         <span>
           <a
             href="https://www.linkedin.com/in/nicolas-pomares-4a8535197/"
-            target={"_blank"}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             LinkedIn
           </a>
@@ -52,7 +57,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       </li>
       <li className="navbar--sublist__item">
         <span>
-          <a href="mailto: nicolaspomaresdev@gmail.com" target={"_blank"}>
+          <a
+            href="mailto: nicolaspomaresdev@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             nicolaspomaresdev@gmail.com
           </a>
         </span>

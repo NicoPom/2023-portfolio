@@ -29,10 +29,14 @@ const ActionButton = ({ activeSection, navIsOpen, project }) => {
               alt="infos_svg"
               onClick={() => toggle("info", activeSection)}
             />
-            <a href={project.github}>
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
               <img src="assets/images/github.svg" alt="github_svg" />
             </a>
-            <a href={project.liveSite}>
+            <a
+              href={project.liveSite}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="assets/images/external.svg" alt="external_svg" />
             </a>
           </>
