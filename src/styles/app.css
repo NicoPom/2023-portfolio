@@ -123,7 +123,7 @@ a {
 }
 
 .navbar,
-.navbar a {
+.navbar--link {
   color: var(--light-gray);
 }
 
@@ -181,7 +181,7 @@ section {
     left: 0;
     background-color: var(--eerie-black);
     transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-in-out;
   }
 
   .hover-underline-animation:hover::after {

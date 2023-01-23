@@ -23,7 +23,9 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   const projectsList = projectsData.map((project) => (
     <li key={project.id} className="navbar--sublist__item">
       <span
-        className={project.id === activeSection ? "active" : ""}
+        className={`navbar--link ${
+          project.id === activeSection ? "active" : ""
+        }`}
         onClick={() => setActiveSection(project.id)}
       >
         {project.title}
@@ -34,37 +36,34 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   const contactList = (
     <ul className="navbar--contact__list">
       <li className="navbar--sublist__item">
-        <span className="hover-underline-animation">
-          <a
-            href="https://github.com/NicoPom"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </span>
+        <a
+          className="navbar--link hover-underline-animation"
+          href="https://github.com/NicoPom"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
       </li>
       <li className="navbar--sublist__item">
-        <span className="hover-underline-animation">
-          <a
-            href="https://www.linkedin.com/in/nicolas-pomares-4a8535197/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-        </span>
+        <a
+          className="navbar--link hover-underline-animation"
+          href="https://www.linkedin.com/in/nicolas-pomares-4a8535197/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
       </li>
       <li className="navbar--sublist__item">
-        <span className="hover-underline-animation">
-          <a
-            href="mailto: nicolaspomaresdev@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            nicolaspomaresdev@gmail.com
-          </a>
-        </span>
+        <a
+          className="navbar--link hover-underline-animation"
+          href="mailto: nicolaspomaresdev@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          nicolaspomaresdev@gmail.com
+        </a>
       </li>
     </ul>
   );
@@ -72,7 +71,9 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   const sectionList = sectionsData.map((section) => (
     <li className="navbar--section__item" key={section.id}>
       <span
-        className={section.id === activeSection ? "active" : ""}
+        className={`navbar--link ${
+          section.id === activeSection ? "active" : ""
+        }`}
         onClick={() => {
           section.id !== "contact" &&
             section.id !== "projects" &&
