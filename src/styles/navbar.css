@@ -80,7 +80,7 @@ ul {
   }
 }
 
-.active {
+nav .active {
   color: var(--cultured);
   opacity: 1;
   transition: all 0.3s ease-in-out;
