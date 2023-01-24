@@ -37,7 +37,8 @@ const App = () => {
             rect.top <= window.innerHeight / 2 &&
             rect.bottom >= window.innerHeight / 2
           ) {
-            setActiveSection(section.id);
+            // preventing the clipping effect when scrolling between the projects
+            section.id !== "projects" && setActiveSection(section.id);
           }
         }
       });
