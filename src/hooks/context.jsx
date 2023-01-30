@@ -23,7 +23,9 @@ const ProjectContextProvider = (props) => {
   }, [isInfoOpen]);
 
   return (
-    <ProjectContext.Provider value={{ isInfoOpen, isNavOpen, toggle }}>
+    <ProjectContext.Provider
+      value={{ isInfoOpen, isNavOpen, toggle, setIsNavOpen }}
+    >
       {props.children}
     </ProjectContext.Provider>
   );

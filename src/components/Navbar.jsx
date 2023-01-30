@@ -8,7 +8,8 @@ import { sectionsData } from "../data/sections";
 import "../styles/navbar.css";
 
 const Navbar = ({ activeSection, setActiveSection }) => {
-  const { isNavOpen, isInfoOpen, toggle } = useContext(ProjectContext);
+  const { isNavOpen, isInfoOpen, toggle, setIsNavOpen } =
+    useContext(ProjectContext);
 
   const [expandedSections, setExpandedSections] = useState([]);
 
@@ -113,14 +114,17 @@ const Navbar = ({ activeSection, setActiveSection }) => {
 
   if (activeSection !== "home")
     return (
-      <div className={`navbar ${isNavOpen ? "navbar--opened" : ""}`}>
-        {isNavOpen && (
-          <div className="navbar__top" onMouseLeave={() => toggle("nav")}>
-            <nav>
-              <ul className="navbar__list">{sectionList}</ul>
-            </nav>
-          </div>
-        )}
+      <div className="navbar">
+        <div
+          className={`navbar__top ${
+            isNavOpen ? "navbar__top__is--open " : ""
+          } `}
+          onMouseLeave={() => setIsNavOpen(false)}
+        >
+          <nav>
+            <ul className="navbar__list">{sectionList}</ul>
+          </nav>
+        </div>
 
         <div className="navbar__bottom">
           {!isInfoOpen[activeSection] && (
