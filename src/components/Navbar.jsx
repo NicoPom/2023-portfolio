@@ -115,7 +115,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     return (
       <div className={`navbar ${isNavOpen ? "navbar--opened" : ""}`}>
         {isNavOpen && (
-          <div className="navbar__top">
+          <div className="navbar__top" onMouseLeave={() => toggle("nav")}>
             <nav>
               <ul className="navbar__list">{sectionList}</ul>
             </nav>
