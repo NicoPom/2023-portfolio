@@ -25,6 +25,10 @@
   flex: 1;
 }
 
+.is-open {
+  max-height: 100vh;
+}
+
 .navbar__bottom {
   display: flex;
   gap: 0.5em;
@@ -42,14 +46,14 @@
   flex-direction: column;
   gap: 0.2em;
   overflow-y: hidden;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease;
 }
 
 /* expanded sublists */
 
 .expanded {
   max-height: 110px;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease;
 }
 
 .navbar__display {
