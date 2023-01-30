@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "../styles/actionButton.css";
 import { ProjectContext } from "../hooks/context";
 
-const ActionButton = ({ activeSection, navIsOpen, project }) => {
+const ActionButton = ({ activeSection, project }) => {
   const { isInfoOpen, isNavOpen, toggle } = useContext(ProjectContext);
 
   return (
