@@ -41,7 +41,6 @@
 
 .navbar__bottom {
   display: flex;
-  gap: 0.5em;
 }
 
 .navbar__list {

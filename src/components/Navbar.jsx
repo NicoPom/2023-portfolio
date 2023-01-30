@@ -137,7 +137,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             </div>
           )}
 
-          {!isNavOpen && actionButtonElement}
+          {actionButtonElement}
         </div>
       </div>
     );
