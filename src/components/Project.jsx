@@ -30,7 +30,7 @@ const Project = ({
     <div id={id} className="project">
       <h4>{title}</h4>
       <a href={liveSite} target="_blank" rel="noopener noreferrer">
-        <img src={src} alt={alt} />
+        <img className="raise" src={src} alt={alt} />
       </a>
 
       <Infos stack={stack} details={details} isInfoOpen={isInfoOpen[id]} />
