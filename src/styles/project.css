@@ -27,7 +27,7 @@
 @media (hover: hover) {
   .raise:hover,
   .raise:focus {
-    box-shadow: 0 1.5em 1em -1.4em #000000;
+    box-shadow: 0 3em 1.5em -2.5em #000000;
     transform: translateY(-0.5em);
     transition: all 0.3s ease;
   }
