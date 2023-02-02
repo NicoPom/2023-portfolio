@@ -3,9 +3,9 @@ export const projectsData = [
     id: "noir damas portfolio",
     title: "noir damas portfolio",
     thumbnail: {
-      mobile: "assets/images/projectsThumbnail/mobile_mockup_noirdamas.png",
-      tablet: "assets/images/projectsThumbnail/tablet_mockup_noirdamas.png",
-      desktop: "assets/images/projectsThumbnail/desktop_mockup_noirdamas.png",
+      mobile: "assets/images/projectsThumbnail/mobile_mockup_noirdamas.webp",
+      tablet: "assets/images/projectsThumbnail/tablet_mockup_noirdamas.webp",
+      desktop: "assets/images/projectsThumbnail/desktop_mockup_noirdamas.webp",
     },
     alt: "noir damas project thumbnail",
     videoURL: "",
@@ -19,9 +19,9 @@ export const projectsData = [
     id: "ratepunk landing page",
     title: "ratepunk landing page",
     thumbnail: {
-      mobile: "assets/images/projectsThumbnail/mobile_mockup_ratepunk.png",
-      tablet: "assets/images/projectsThumbnail/tablet_mockup_ratepunk.png",
-      desktop: "assets/images/projectsThumbnail/desktop_mockup_ratepunk.png",
+      mobile: "assets/images/projectsThumbnail/mobile_mockup_ratepunk.webp",
+      tablet: "assets/images/projectsThumbnail/tablet_mockup_ratepunk.webp",
+      desktop: "assets/images/projectsThumbnail/desktop_mockup_ratepunk.webp",
     },
     alt: "ratepunk project thumbnail",
     videoURL: "",
@@ -36,11 +36,11 @@ export const projectsData = [
     title: "portfolio nicolas pomares",
     thumbnail: {
       mobile:
-        "assets/images/projectsThumbnail/mobile_mockup_portfolio_nicolaspomares.png",
+        "assets/images/projectsThumbnail/mobile_mockup_portfolio_nicolaspomares.webp",
       tablet:
-        "assets/images/projectsThumbnail/tablet_mockup_portfolio_nicolaspomares.png",
+        "assets/images/projectsThumbnail/tablet_mockup_portfolio_nicolaspomares.webp",
       desktop:
-        "assets/images/projectsThumbnail/desktop_mockup_portfolio_nicolaspomares.png",
+        "assets/images/projectsThumbnail/desktop_mockup_portfolio_nicolaspomares.webp",
     },
     alt: "portfolio nicolas pomares project thumbnail",
     videoURL: "",
