@@ -74,6 +74,17 @@
   gap: 0.5em;
 }
 
+.navbar__display img {
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .navbar__display:hover img {
+    transform: translateY(0.2em);
+    transition: transform 0.3s ease;
+  }
+}
+
 ul {
   list-style: none;
 }
