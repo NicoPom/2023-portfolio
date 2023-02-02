@@ -6,7 +6,7 @@ const About = ({ setActiveSection }) => {
     <section id="about" className="about">
       <div className="back--scroll--container">
         <a onClick={() => setActiveSection("projects")}>
-          <img src="assets/images/arrow_up.svg" alt="arrow_up_svg" />
+          <img src="images/arrow_up.svg" alt="arrow_up_svg" />
           <span className="scroll--span hover-underline-animation">
             Back to my work
           </span>

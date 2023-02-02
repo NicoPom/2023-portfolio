@@ -13,7 +13,7 @@ const Home = ({ setActiveSection }) => (
         <span className="scroll--span hover-underline-animation">
           See my work
         </span>
-        <img src="assets/images/arrow_down.svg" alt="arrow_down_svg" />
+        <img src="images/arrow_down.svg" alt="arrow_down_svg" />
       </a>
     </div>
   </section>

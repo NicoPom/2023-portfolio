@@ -133,7 +133,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
               onClick={() => toggle("nav")}
             >
               <span className="navbar__display--text">{activeSection}</span>
-              <img src="assets/images/menu.svg" alt="menu_svg" />
+              <img src="images/menu.svg" alt="menu_svg" />
             </div>
           )}
 
