@@ -119,7 +119,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           className={`navbar__top ${
             isNavOpen ? "navbar__top__is--open " : ""
           } `}
-          // onMouseLeave={() => setIsNavOpen(false)}
+          onMouseLeave={() => setIsNavOpen(false)}
         >
           <nav>
             <ul className="navbar__list">{sectionList}</ul>

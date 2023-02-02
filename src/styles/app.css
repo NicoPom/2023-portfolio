@@ -42,6 +42,10 @@ body,
   cursor: pointer;
 }
 
+.clickable:focus {
+  border: 4px solid var(red);
+}
+
 span {
   cursor: pointer;
 }
