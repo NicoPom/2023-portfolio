@@ -30,7 +30,7 @@
 
 @media (hover: hover) {
   .action--button:hover {
-    transform: translateY(0.2em);
+    transform: translateY(0.1em);
     transition: transform 0.3s ease-out;
   }
 }

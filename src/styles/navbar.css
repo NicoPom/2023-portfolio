@@ -80,7 +80,7 @@
 
 @media (hover: hover) {
   .navbar__display:hover img {
-    transform: translateY(0.2em);
+    transform: translateX(0.1em);
     transition: transform 0.3s ease;
   }
 }
