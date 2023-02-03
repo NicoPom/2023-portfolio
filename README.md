@@ -24,7 +24,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/NicoPom/2023-portfolio">
-    <img src="public/assets/images/favicon.svg" alt="Logo" width="80" height="80">
+    <img src="public/images/favicon.svg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">2023 PORTFOLIO</h3>
@@ -99,7 +99,7 @@ Nicolas Pomares - [LinkedIn](https://www.linkedin.com/in/nicolas-pomares-4a85351
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/nicolas-pomares-4a8535197/
-[product-screenshot]: public/assets/images/projectsThumbnail/desktop_mockup_portfolio_nicolaspomares.png
+[product-screenshot]: public/images/projectsThumbnail/desktop_mockup_portfolio_nicolaspomares.webp
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
