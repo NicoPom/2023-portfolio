@@ -16,6 +16,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
 
   const [expandedSections, setExpandedSections] = useState([]);
 
+  // Toggles the expanded state of the Projects or Contact section
   const toggleExpanded = (sectionId) => {
     setExpandedSections((prevExpandedSections) =>
       prevExpandedSections.includes(sectionId)
@@ -24,6 +25,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     );
   };
 
+  // Create a list of projects for the "Projects" section
   const projectsList = projectsData.map((project) => (
     <li key={project.id} className="navbar--sublist__item">
       <span
@@ -37,6 +39,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     </li>
   ));
 
+  // Create a list of sections for the main navigation bar
   const sectionList = sectionsData.map((section) => (
     <li className="navbar--section__item" key={section.id}>
       <span
@@ -67,6 +70,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     </li>
   ));
 
+  // Create an array of `ActionButton` components for each project
   const actionButtonElement = projectsData.map((project) => {
     if (project.id === activeSection) {
       return (
@@ -77,7 +81,6 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         />
       );
     }
-    return null;
   });
 
   if (activeSection !== "home")
