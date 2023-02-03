@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/infos.css";
 
 const Infos = ({ stack, details, isInfoOpen }) => {
+  // Split the details string into an array of paragraphs
   const paragraphs = details
     .split("\n")
     .map((paragraph, key) => <p key={key}>{paragraph}</p>);
