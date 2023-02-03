@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { ProjectContext } from "../hooks/context";
 
 import ActionButton from "./ActionButton";
-import ProjectsList from "./ProjectsList";
+
 import ContactList from "./ContactList";
 
 import { projectsData } from "../data/projects";
@@ -17,12 +17,25 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   const [expandedSections, setExpandedSections] = useState([]);
 
   const toggleExpanded = (sectionId) => {
-    if (expandedSections.includes(sectionId)) {
-      setExpandedSections(expandedSections.filter((id) => id !== sectionId));
-    } else {
-      setExpandedSections([...expandedSections, sectionId]);
-    }
+    setExpandedSections((prevExpandedSections) =>
+      prevExpandedSections.includes(sectionId)
+        ? prevExpandedSections.filter((id) => id !== sectionId)
+        : [...prevExpandedSections, sectionId]
+    );
   };
+
+  const projectsList = projectsData.map((project) => (
+    <li key={project.id} className="navbar--sublist__item">
+      <span
+        className={`navbar--link ${
+          project.id === activeSection ? "active" : ""
+        }`}
+        onClick={() => setActiveSection(project.id)}
+      >
+        {project.title}
+      </span>
+    </li>
+  ));
 
   const sectionList = sectionsData.map((section) => (
     <li className="navbar--section__item" key={section.id}>
@@ -47,13 +60,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             expandedSections.includes(section.id) ? "expanded" : ""
           }`}
         >
-          {section.id === "projects" && (
-            <ProjectsList
-              projects={projectsData}
-              activeSection={activeSection}
-              setActiveSection={setActiveSection}
-            />
-          )}
+          {section.id === "projects" && projectsList}
           {section.id === "contact" && <ContactList />}
         </ul>
       )}
@@ -80,7 +87,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           className={`navbar__top ${
             isNavOpen ? "navbar__top__is--open " : ""
           } `}
-          onMouseLeave={() => setIsNavOpen(false)}
+          // onMouseLeave={() => setIsNavOpen(false)}
         >
           <nav>
             <ul className="navbar__list">{sectionList}</ul>
