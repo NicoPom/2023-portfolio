@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import { ProjectContext } from "./hooks/context";
-
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Navbar from "./components/Navbar";
-
 import "./styles/app.css";
-
 import { sectionsData } from "./data/sections";
 import { projectsData } from "./data/projects";
 
@@ -15,36 +12,37 @@ const App = () => {
   const [activeSection, setActiveSection] = useState("home");
   const { toggle, isNavOpen } = useContext(ProjectContext);
 
+  // Function to handle clicks on the navigation bar
   const handleClick = (id) => {
     setActiveSection(id);
-    isNavOpen && toggle("nav");
+    // Close the navigation bar if it's open
+    if (isNavOpen) toggle("nav");
+    // Scroll to the section
     const sectionEl = document.getElementById(id);
     sectionEl.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
-    /**
-     * When the user scrolls, check if the top of the element is within 2/3 of the window height, and
-     * if so, set the active section to the id of the element.
-     */
     const handleScroll = () => {
-      sectionsData.concat(projectsData).forEach((section) => {
+      // Check the visibility of all sections
+      [...sectionsData, ...projectsData].forEach((section) => {
         const el = document.getElementById(section.id);
         if (el) {
           const rect = el.getBoundingClientRect();
+          // Check if the middle of the element is in the viewport
           if (
-            //middle of the element is in the viewport
             rect.top <= window.innerHeight / 2 &&
             rect.bottom >= window.innerHeight / 2
           ) {
-            // preventing the clipping effect when scrolling between the projects
-            section.id !== "projects" && setActiveSection(section.id);
+            // Prevent clipping effect when scrolling between projects
+            if (section.id !== "projects") setActiveSection(section.id);
           }
         }
       });
     };
 
     document.addEventListener("scroll", handleScroll);
+    // Clean up the event listener when the component unmounts
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
