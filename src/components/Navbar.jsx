@@ -2,6 +2,9 @@ import React, { useContext, useState } from "react";
 import { ProjectContext } from "../hooks/context";
 
 import ActionButton from "./ActionButton";
+import ProjectsList from "./ProjectsList";
+import ContactList from "./ContactList";
+
 import { projectsData } from "../data/projects";
 import { sectionsData } from "../data/sections";
 
@@ -20,54 +23,6 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       setExpandedSections([...expandedSections, sectionId]);
     }
   };
-
-  const projectsList = projectsData.map((project) => (
-    <li key={project.id} className="navbar--sublist__item">
-      <span
-        className={`navbar--link ${
-          project.id === activeSection ? "active" : ""
-        }`}
-        onClick={() => setActiveSection(project.id)}
-      >
-        {project.title}
-      </span>
-    </li>
-  ));
-
-  const contactList = (
-    <ul className="navbar--contact__list">
-      <li className="navbar--sublist__item">
-        <a
-          className="navbar--link hover-underline-animation"
-          href="https://github.com/NicoPom"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-      </li>
-      <li className="navbar--sublist__item">
-        <a
-          className="navbar--link hover-underline-animation"
-          href="https://www.linkedin.com/in/nicolas-pomares-4a8535197/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-      </li>
-      <li className="navbar--sublist__item">
-        <a
-          className="navbar--link hover-underline-animation"
-          href="mailto: nicolaspomaresdev@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          nicolaspomaresdev@gmail.com
-        </a>
-      </li>
-    </ul>
-  );
 
   const sectionList = sectionsData.map((section) => (
     <li className="navbar--section__item" key={section.id}>
@@ -92,8 +47,14 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             expandedSections.includes(section.id) ? "expanded" : ""
           }`}
         >
-          {section.id === "projects" && projectsList}
-          {section.id === "contact" && contactList}
+          {section.id === "projects" && (
+            <ProjectsList
+              projects={projectsData}
+              activeSection={activeSection}
+              setActiveSection={setActiveSection}
+            />
+          )}
+          {section.id === "contact" && <ContactList />}
         </ul>
       )}
     </li>
