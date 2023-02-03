@@ -2,9 +2,9 @@ import React from "react";
 import "../styles/infos.css";
 
 const Infos = ({ stack, details, isInfoOpen }) => {
-  const paragraphs = details.split("\n").map((paragraph, key) => {
-    return <p key={key}>{paragraph}</p>;
-  });
+  const paragraphs = details
+    .split("\n")
+    .map((paragraph, key) => <p key={key}>{paragraph}</p>);
 
   return (
     <section
