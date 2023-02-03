@@ -71,17 +71,16 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   ));
 
   // Create an array of `ActionButton` components for each project
-  const actionButtonElement = projectsData.map((project) => {
-    if (project.id === activeSection) {
-      return (
+  const actionButtonElement = projectsData.map(
+    (project) =>
+      project.id === activeSection && (
         <ActionButton
           key={project.id}
           activeSection={activeSection}
           project={project}
         />
-      );
-    }
-  });
+      )
+  );
 
   if (activeSection !== "home")
     return (
