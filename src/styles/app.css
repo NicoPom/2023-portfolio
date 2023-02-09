@@ -75,7 +75,7 @@ span {
 body {
   font-family: "Europa", sans-serif;
   font-weight: 100;
-  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-size: clamp(1rem, 3vw, 2rem);
   color: var(--eerie-black);
   letter-spacing: -0.02em;
 }
@@ -106,7 +106,7 @@ h4 {
 }
 
 h5 {
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 4vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.04em;
 }

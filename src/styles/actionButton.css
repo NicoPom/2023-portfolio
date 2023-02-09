@@ -5,14 +5,14 @@
   align-items: center;
   opacity: 0;
   max-width: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   transition: all 0.3s ease;
   content-visibility: hidden;
 }
 
 .navbar__actions__is--open {
   max-width: 100vw;
-  overflow-x: visible;
+  overflow: visible;
   content-visibility: visible;
   gap: 0.8em;
   padding: 0.5em 0.75em;
