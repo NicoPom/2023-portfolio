@@ -46,8 +46,8 @@ export const projectsData = [
     videoURL: "",
     liveSite: "https://www.nicolaspomares.com/",
     github: "https://github.com/NicoPom/2023-portfolio",
-    details:
-      "This is a portfolio website that I created to showcase my work as a web developer. I used React.JS, HTML and CSS to create this website. ",
+    details: `This is a portfolio website that I created to showcase my work as a web developer. I used React.JS, HTML and CSS to create this website. \n
+    The attention has been put on the navigation and the interactivity of the navbar. `,
     stack: "React.js | HTML5 | CSS3 | Netlify",
   },
 ];
