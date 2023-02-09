@@ -82,35 +82,38 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       )
   );
 
-  if (activeSection !== "home")
-    return (
-      <div className="navbar">
-        <div
-          className={`navbar__top ${
-            isNavOpen ? "navbar__top__is--open " : ""
-          } `}
-          onMouseLeave={() => setIsNavOpen(false)}
-        >
-          <nav>
-            <ul className="navbar__list">{sectionList}</ul>
-          </nav>
-        </div>
-
-        <div className="navbar__bottom">
-          {!isInfoOpen[activeSection] && (
-            <div
-              className="navbar__display clickable"
-              onClick={() => toggle("nav")}
-            >
-              <span className="navbar__display--text">{activeSection}</span>
-              <img src="images/menu.svg" alt="menu_svg" />
-            </div>
-          )}
-
-          {actionButtonElement}
-        </div>
+  return (
+    <div
+      className={`navbar ${
+        activeSection !== "home" ? "navbar__is--shown" : ""
+      }`}
+    >
+      <div
+        className={`navbar__top ${isNavOpen ? "navbar__top__is--open " : ""} `}
+        onMouseLeave={() => setIsNavOpen(false)}
+      >
+        <nav>
+          <ul className="navbar__list">{sectionList}</ul>
+        </nav>
       </div>
-    );
+
+      <div className="navbar__bottom">
+        {!isInfoOpen[activeSection] && (
+          <div
+            className="navbar__display clickable"
+            onClick={() => toggle("nav")}
+          >
+            <span className="navbar__display--text">
+              {activeSection !== "home" && activeSection}
+            </span>
+            <img src="images/menu.svg" alt="menu_svg" />
+          </div>
+        )}
+
+        {actionButtonElement}
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
