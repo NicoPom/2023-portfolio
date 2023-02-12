@@ -53,11 +53,10 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#installation">Installation</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -76,6 +75,22 @@ The website has a simple design, but the standout feature is the dynamic navigat
 * [![React][React.js]][React-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- INSTALLATION -->
+
+## Installation
+
+Install dependencies:
+
+```
+npm install
+```
+
+Compile the code for development and start a local server:
+
+```
+npm run dev
+```
 
 <!-- CONTACT -->
 ## Contact
