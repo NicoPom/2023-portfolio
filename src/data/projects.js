@@ -16,6 +16,16 @@ export const projectsData = [
       "React.js | HTML5 | CSS3 | Contentful CMS | React Router | GraphQL API",
   },
   {
+    id: "ecommerce product page",
+    title: "ecommerce product page",
+    thumbnail:{
+      mobile: "images/projectsThumbnail/mobile_mockup_ecommerce.png"
+      tablet: "images/projectsThumbnail/tablet_mockup_ecommerce.png"
+      desktop: "images/projectsThumbnail/desktop_mockup_ecommerce.png"
+    },
+    
+  },
+  {
     id: "ratepunk landing page",
     title: "ratepunk landing page",
     thumbnail: {
