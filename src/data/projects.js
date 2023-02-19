@@ -18,12 +18,17 @@ export const projectsData = [
   {
     id: "ecommerce product page",
     title: "ecommerce product page",
-    thumbnail:{
-      mobile: "images/projectsThumbnail/mobile_mockup_ecommerce.png"
-      tablet: "images/projectsThumbnail/tablet_mockup_ecommerce.png"
-      desktop: "images/projectsThumbnail/desktop_mockup_ecommerce.png"
+    thumbnail: {
+      mobile: " images/projectsThumbnail/mobile_mockup_ecommerce.png",
+      tablet: "images/projectsThumbnail/tablet_mockup_ecommerce.png",
+      desktop: "images/projectsThumbnail/desktop_mockup_ecommerce.png",
     },
-    
+    alt: "ecommerce project thumbnail",
+    videoURL: "",
+    liveSite: "https://e-commerce-sneaker-page.netlify.app/",
+    github: "https://github.com/NicoPom/ecommerce-product-page",
+    details: `For this project, I created a product page for a fictional e-commerce company, using Vanilla JS, HTML and CSS. Implemented a gallery with a carousel`,
+    stack: "Vanilla JS | HTML5 | CSS3 | Netlify",
   },
   {
     id: "ratepunk landing page",
