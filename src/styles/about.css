@@ -1,3 +1,7 @@
+.about {
+  position: relative;
+}
+
 .back--scroll--container {
   margin-bottom: 2rem;
   align-self: flex-start;
@@ -8,4 +12,15 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.6em;
+}
+.profile-picture {
+  filter: opacity(0.2);
+  width: 100%;
+  max-width: 500px;
+
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }

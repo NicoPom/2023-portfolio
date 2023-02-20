@@ -32,6 +32,11 @@ const About = ({ setActiveSection }) => {
           explore collaboration opportunities on various projects.
         </p>
       </div>
+      <img
+        className="profile-picture"
+        src="images/profile_picture.jpg"
+        alt="pofile_picture"
+      />
     </section>
   );
 };
