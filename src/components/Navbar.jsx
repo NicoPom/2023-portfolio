@@ -84,7 +84,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
 
   return (
     <div
-      onMouseLeave={() => setIsNavOpen(false)}
+      // onMouseLeave={() => setIsNavOpen(false)}
       className={`navbar ${
         activeSection !== "home" ? "navbar__is--shown" : ""
       }`}

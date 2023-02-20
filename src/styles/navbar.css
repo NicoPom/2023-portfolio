@@ -75,7 +75,7 @@
 /* expanded sublists */
 
 .expanded {
-  max-height: 110px;
+  max-height: 115px;
   transition: all 0.3s ease;
 }
 
