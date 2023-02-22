@@ -39,8 +39,9 @@ const App = () => {
               rect.bottom >= window.innerHeight / 2
             ) {
               // Prevent clipping effect when scrolling between projects
-              if (section.id !== "projects" || section.id !== "ui")
+              if (section.id !== "projects" && section.id !== "ui") {
                 setActiveSection(section.id);
+              }
             }
           }
         }
@@ -64,7 +65,10 @@ const App = () => {
     <div className="app">
       <Home setActiveSection={handleClick} />
       <Projects />
-      {uiSnippetsElements}
+      <div id="ui" className="projects--section">
+        {uiSnippetsElements}
+      </div>
+
       <About setActiveSection={handleClick} />
       <Navbar
         activeSection={activeSection}
