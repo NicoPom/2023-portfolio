@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 import "./styles/app.css";
 import { sectionsData } from "./data/sections";
 import { projectsData } from "./data/projects";
-import { uiSnippetsData } from "./data/ui";
+import { uiSnippetsData } from "./data/uiSnippet";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -65,9 +65,9 @@ const App = () => {
     <div className="app">
       <Home setActiveSection={handleClick} />
       <Projects />
-      <div id="ui" className="projects--section">
+      <section id="ui" className="projects--section">
         {uiSnippetsElements}
-      </div>
+      </section>
 
       <About setActiveSection={handleClick} />
       <Navbar

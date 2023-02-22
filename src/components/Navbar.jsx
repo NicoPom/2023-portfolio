@@ -7,7 +7,7 @@ import ContactList from "./ContactList";
 
 import { projectsData } from "../data/projects";
 import { sectionsData } from "../data/sections";
-import { uiSnippetsData } from "../data/ui";
+import { uiSnippetsData } from "../data/uiSnippet";
 
 import "../styles/navbar.css";
 
