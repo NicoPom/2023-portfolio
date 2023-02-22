@@ -54,7 +54,7 @@ const App = () => {
   // Ui Snippets
 
   const uiSnippetsElements = uiSnippetsData.map((snippet) => (
-    <UiSnippet key={snippet.id} iframe={snippet.iframe} />
+    <UiSnippet key={snippet.id} data={snippet} />
   ));
 
   return (
