@@ -55,7 +55,6 @@
 
 .navbar__bottom {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 0.5em;
 }
@@ -86,7 +85,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  flex: 1;
   white-space: nowrap;
   gap: 0.5em;
 }
