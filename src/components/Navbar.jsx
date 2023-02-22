@@ -7,6 +7,7 @@ import ContactList from "./ContactList";
 
 import { projectsData } from "../data/projects";
 import { sectionsData } from "../data/sections";
+import { uiSnippetsData } from "../data/ui";
 
 import "../styles/navbar.css";
 
@@ -15,6 +16,21 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     useContext(ProjectContext);
 
   const [expandedSections, setExpandedSections] = useState([]);
+
+  function handleNavLinkClick(section) {
+    // those links have sublist, so no scroll intoview
+    section.id !== "contact" &&
+      section.id !== "projects" &&
+      section.id !== "ui" &&
+      setActiveSection(section.id);
+    if (
+      section.id === "projects" ||
+      section.id === "contact" ||
+      section.id === "ui"
+    ) {
+      toggleExpanded(section.id);
+    }
+  }
 
   // Toggles the expanded state of the Projects or Contact section
   const toggleExpanded = (sectionId) => {
@@ -39,6 +55,20 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     </li>
   ));
 
+  // Create a list of ui snippets
+  const uiList = uiSnippetsData.map((snippet) => (
+    <li key={snippet.id} className="navbar--sublist__item">
+      <span
+        className={`navbar--link ${
+          snippet.id === activeSection ? "active" : ""
+        }`}
+        onClick={() => setActiveSection(snippet.id)}
+      >
+        {snippet.title}
+      </span>
+    </li>
+  ));
+
   // Create a list of sections for the main navigation bar
   const sectionList = sectionsData.map((section) => (
     <li className="navbar--section__item" key={section.id}>
@@ -46,24 +76,20 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         className={`navbar--link ${
           section.id === activeSection ? "active" : ""
         }`}
-        onClick={() => {
-          section.id !== "contact" &&
-            section.id !== "projects" &&
-            setActiveSection(section.id);
-          if (section.id === "projects" || section.id === "contact") {
-            toggleExpanded(section.id);
-          }
-        }}
+        onClick={() => handleNavLinkClick(section)}
       >
         {section.id}
       </span>
-      {(section.id === "projects" || section.id === "contact") && (
+      {(section.id === "projects" ||
+        section.id === "contact" ||
+        section.id === "ui") && (
         <ul
           className={`navbar--sublist ${
             expandedSections.includes(section.id) ? "expanded" : ""
           }`}
         >
           {section.id === "projects" && projectsList}
+          {section.id === "ui" && uiList}
           {section.id === "contact" && <ContactList />}
         </ul>
       )}

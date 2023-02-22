@@ -5,7 +5,9 @@ const sectionsData = [
   {
     id: "projects",
   },
-  { id: "uisnippets" },
+  {
+    id: "ui",
+  },
   {
     id: "about",
   },

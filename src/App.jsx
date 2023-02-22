@@ -28,20 +28,23 @@ const App = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Check the visibility of all sections
-      [...sectionsData, ...projectsData].forEach((section) => {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          // Check if the middle of the element is in the viewport
-          if (
-            rect.top <= window.innerHeight / 2 &&
-            rect.bottom >= window.innerHeight / 2
-          ) {
-            // Prevent clipping effect when scrolling between projects
-            if (section.id !== "projects") setActiveSection(section.id);
+      [...sectionsData, ...projectsData, ...uiSnippetsData].forEach(
+        (section) => {
+          const el = document.getElementById(section.id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            // Check if the middle of the element is in the viewport
+            if (
+              rect.top <= window.innerHeight / 2 &&
+              rect.bottom >= window.innerHeight / 2
+            ) {
+              // Prevent clipping effect when scrolling between projects
+              if (section.id !== "projects" || section.id !== "ui")
+                setActiveSection(section.id);
+            }
           }
         }
-      });
+      );
     };
 
     document.addEventListener("scroll", handleScroll);
