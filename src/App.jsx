@@ -3,10 +3,13 @@ import { ProjectContext } from "./hooks/context";
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import UiSnippet from "./components/UiSnippet";
+
 import Navbar from "./components/Navbar";
 import "./styles/app.css";
 import { sectionsData } from "./data/sections";
 import { projectsData } from "./data/projects";
+import { uiSnippetsData } from "./data/ui";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -48,10 +51,17 @@ const App = () => {
     };
   }, [activeSection, setActiveSection]);
 
+  // Ui Snippets
+
+  const uiSnippetsElements = uiSnippetsData.map((snippet) => (
+    <UiSnippet key={snippet.id} iframe={snippet.iframe} />
+  ));
+
   return (
     <div className="app">
       <Home setActiveSection={handleClick} />
       <Projects />
+      {uiSnippetsElements}
       <About setActiveSection={handleClick} />
       <Navbar
         activeSection={activeSection}
