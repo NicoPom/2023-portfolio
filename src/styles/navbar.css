@@ -7,6 +7,7 @@
   border-radius: 10px;
   background-color: rgba(20, 19, 23, 0.5);
   display: flex;
+
   flex-direction: column;
 
   max-width: 0;
@@ -54,6 +55,8 @@
 
 .navbar__bottom {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5em;
 }
 
