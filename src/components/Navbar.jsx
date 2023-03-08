@@ -29,16 +29,21 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       section.id === "ui"
     ) {
       toggleExpanded(section.id);
+      // toggle only one at a time
     }
   }
 
-  // Toggles the expanded state of the Projects or Contact section
+  // Toggles the expanded state of nav sections
   const toggleExpanded = (sectionId) => {
-    setExpandedSections((prevExpandedSections) =>
-      prevExpandedSections.includes(sectionId)
-        ? prevExpandedSections.filter((id) => id !== sectionId)
-        : [...prevExpandedSections, sectionId]
-    );
+    setExpandedSections((prevExpandedSections) => {
+      if (prevExpandedSections.includes(sectionId)) {
+        // Collapse all sections
+        return [];
+      } else {
+        // Expand only the current section
+        return [sectionId];
+      }
+    });
   };
 
   // Create a list of projects for the "Projects" section
@@ -110,7 +115,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
 
   return (
     <div
-      onMouseLeave={() => setIsNavOpen(false)}
+      // onMouseLeave={() => setIsNavOpen(false)}
       className={`navbar ${
         activeSection !== "home" ? "navbar__is--shown" : ""
       }`}
