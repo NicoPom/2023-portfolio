@@ -28,7 +28,6 @@ body,
 #root,
 .app {
   min-height: 100%;
-  overflow-x: hidden;
 }
 
 body,
@@ -50,8 +49,6 @@ body,
 span {
   cursor: pointer;
 }
-
-/* scroll behavior */
 
 /*typography*/
 

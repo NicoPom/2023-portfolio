@@ -70,11 +70,11 @@ const App = () => {
       </section>
 
       <About setActiveSection={handleClick} />
-      <Navbar
+      {/* <Navbar
         activeSection={activeSection}
         setActiveSection={handleClick}
         sectionsData={sectionsData}
-      />
+      /> */}
     </div>
   );
 };

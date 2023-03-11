@@ -1,5 +1,6 @@
 .about {
   position: relative;
+  overflow: hidden;
 }
 
 .back--scroll--container {
