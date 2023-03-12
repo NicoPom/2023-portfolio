@@ -30,16 +30,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   };
 
   // Toggles the expanded state of nav sections
+  // Only one section can be expanded at a time.
   const toggleExpanded = (sectionId) => {
-    setExpandedSections((prevExpandedSections) => {
-      if (prevExpandedSections.includes(sectionId)) {
-        // Collapse all sections
-        return [];
-      } else {
-        // Expand only the current section
-        return [sectionId];
-      }
-    });
+    setExpandedSections((prevExpandedSections) =>
+      prevExpandedSections.includes(sectionId) ? [] : [sectionId]
+    );
   };
 
   // Create a list of projects for the "Projects" section
