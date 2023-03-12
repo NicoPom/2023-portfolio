@@ -37,82 +37,65 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     );
   };
 
-  // Create a list of projects for the "Projects" section
-  const projectsList = projectsData.map((project) => (
-    <li key={project.id} className="navbar--sublist__item">
-      <span
-        className={`navbar--link ${
-          project.id === activeSection ? "active" : ""
-        }`}
-        onClick={() => setActiveSection(project.id)}
-      >
-        {project.title}
-      </span>
-    </li>
-  ));
-
-  // Create a list of ui snippets
-  const uiList = uiSnippetsData.map((snippet) => (
-    <li key={snippet.id} className="navbar--sublist__item">
-      <span
-        className={`navbar--link ${
-          snippet.id === activeSection ? "active" : ""
-        }`}
-        onClick={() => setActiveSection(snippet.id)}
-      >
-        {snippet.title}
-      </span>
-    </li>
-  ));
-
-  // Create a list of sections for the main navigation bar
-  const sectionList = sectionsData.map((section) => (
-    <li className="navbar--section__item" key={section.id}>
-      <span
-        className={`navbar--link ${
-          section.id === activeSection ? "active" : ""
-        }`}
-        onClick={() => handleNavLinkClick(section)}
-      >
-        {section.id}
-      </span>
-      {(section.id === "projects" ||
-        section.id === "contact" ||
-        section.id === "ui") && (
-        <ul
-          className={`navbar--sublist ${
-            expandedSections.includes(section.id) ? "expanded" : ""
-          }`}
-        >
-          {section.id === "projects" && projectsList}
-          {section.id === "ui" && uiList}
-          {section.id === "contact" && <ContactList />}
-        </ul>
-      )}
-    </li>
-  ));
-
-  // Create an array of `ActionButton` components for each project
-  const actionButtonElement = [...projectsData, ...uiSnippetsData].map(
-    (project) =>
-      project.id === activeSection && (
-        <ActionButton
-          key={project.id}
-          activeSection={activeSection}
-          project={project}
-        />
-      )
+  const createNavLink = (id, title) => (
+    <span
+      key={id}
+      className={`navbar--link ${id === activeSection ? "active" : ""}`}
+      onClick={() => handleNavLinkClick({ id })}
+    >
+      {title}
+    </span>
   );
+
+  // Creates the dropdown menu for the sections that have one
+  const createSubList = (sectionId) => {
+    const data =
+      sectionId === "projects"
+        ? projectsData
+        : sectionId === "ui"
+        ? uiSnippetsData
+        : [];
+    return (
+      <ul
+        className={`navbar--sublist ${
+          expandedSections.includes(sectionId) ? "expanded" : ""
+        }`}
+      >
+        {data.map(({ id, title }) => (
+          <li key={id} className="navbar--sublist__item">
+            {createNavLink(id, title)}
+          </li>
+        ))}
+        {sectionId === "contact" && <ContactList />}
+      </ul>
+    );
+  };
+
+  const sectionList = sectionsData.map(({ id }) => (
+    <li key={id} className="navbar--section__item">
+      {createNavLink(id, id)}
+      {["projects", "contact", "ui"].includes(id) && createSubList(id)}
+    </li>
+  ));
+
+  const actionButtonElements = [...projectsData, ...uiSnippetsData]
+    .filter((project) => project.id === activeSection)
+    .map(({ id, ...rest }) => (
+      <ActionButton
+        key={id}
+        activeSection={activeSection}
+        project={{ id, ...rest }}
+      />
+    ));
 
   return (
     <div
-      // onMouseLeave={() => setIsNavOpen(false)}
       className={`navbar ${
         activeSection !== "home" ? "navbar__is--shown" : ""
       }`}
     >
       <div
-        className={`navbar__top ${isNavOpen ? "navbar__top__is--open " : ""} `}
+        className={`navbar__top ${isNavOpen ? "navbar__top__is--open " : ""}`}
       >
         <nav>
           <ul className="navbar__list">{sectionList}</ul>
@@ -132,7 +115,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           </div>
         )}
 
-        {actionButtonElement}
+        {actionButtonElements}
       </div>
     </div>
   );
