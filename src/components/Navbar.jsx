@@ -71,6 +71,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     );
   };
 
+  // Creates the list of sections
   const sectionList = sectionsData.map(({ id }) => (
     <li key={id} className="navbar--section__item">
       {createNavLink(id, id)}
@@ -78,6 +79,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     </li>
   ));
 
+  // Creates the action button for the active section
   const actionButtonElements = [...projectsData, ...uiSnippetsData]
     .filter((project) => project.id === activeSection)
     .map(({ id, ...rest }) => (
