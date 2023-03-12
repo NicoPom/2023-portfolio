@@ -11,18 +11,22 @@ import { uiSnippetsData } from "../data/uiSnippet";
 import "../styles/navbar.css";
 
 const Navbar = ({ activeSection, setActiveSection }) => {
-  const { isNavOpen, isInfoOpen, toggle, setIsNavOpen } =
-    useContext(ProjectContext);
+  const { isNavOpen, isInfoOpen, toggle } = useContext(ProjectContext);
 
   const [expandedSections, setExpandedSections] = useState([]);
 
+  const [isSectionChanging, setIsSectionChanging] = useState(false);
+
   const handleNavLinkClick = (section) => {
     // those are the sections that have a dropdown menu
+
     if (
       !["contact", "projects", "ui"].includes(section.id) &&
       activeSection !== section.id
     ) {
+      setIsSectionChanging(true); // Set flag to animate navbar display
       setActiveSection(section.id);
+      setTimeout(() => setIsSectionChanging(false), 500); // Remove flag after animation
     }
     if (["contact", "projects", "ui"].includes(section.id)) {
       toggleExpanded(section.id);
@@ -110,7 +114,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             className="navbar__display clickable"
             onClick={() => toggle("nav")}
           >
-            <span className="navbar__display--text">
+            <span
+              className={`navbar__display--text ${
+                isSectionChanging ? "changing" : ""
+              }`}
+            >
               {activeSection !== "home" && activeSection}
             </span>
             <img src="images/menu.svg" alt="menu_svg" />

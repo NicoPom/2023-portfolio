@@ -7,13 +7,12 @@
   border-radius: 10px;
   background-color: rgba(20, 19, 23, 0.5);
   display: flex;
-
   flex-direction: column;
 
   max-width: 0;
   max-height: 0;
   transition: all 0.3s ease;
-  overflow: hidden;
+
   opacity: 0.5;
 }
 
@@ -22,7 +21,8 @@
 .navbar__is--shown {
   opacity: 1;
   padding: 0.5em;
-  max-width: 100vw;
+  max-width: 90vw;
+
   max-height: 100vh;
 
   transition: all 0.3s ease;
@@ -55,8 +55,6 @@
 
 .navbar__bottom {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 0.5em;
 }
 
@@ -83,12 +81,25 @@
 }
 
 .navbar__display {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1;
   white-space: nowrap;
+  overflow: hidden;
   gap: 0.5em;
+}
+
+.navbar__display--text {
+  height: 100%;
+  transition: height 0.3s ease-out;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar__display--text.changing {
+  height: 0;
+  transition: height 0.3s ease-in;
 }
 
 .navbar__display img {
