@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { ProjectContext } from "../hooks/context";
 
 import ActionButton from "./ActionButton";
-
 import ContactList from "./ContactList";
 
 import { projectsData } from "../data/projects";
@@ -17,21 +16,18 @@ const Navbar = ({ activeSection, setActiveSection }) => {
 
   const [expandedSections, setExpandedSections] = useState([]);
 
-  function handleNavLinkClick(section) {
-    // those links have sublist, so no scroll intoview
-    section.id !== "contact" &&
-      section.id !== "projects" &&
-      section.id !== "ui" &&
-      setActiveSection(section.id);
+  const handleNavLinkClick = (section) => {
+    // those are the sections that have a dropdown menu
     if (
-      section.id === "projects" ||
-      section.id === "contact" ||
-      section.id === "ui"
+      !["contact", "projects", "ui"].includes(section.id) &&
+      activeSection !== section.id
     ) {
-      toggleExpanded(section.id);
-      // toggle only one at a time
+      setActiveSection(section.id);
     }
-  }
+    if (["contact", "projects", "ui"].includes(section.id)) {
+      toggleExpanded(section.id);
+    }
+  };
 
   // Toggles the expanded state of nav sections
   const toggleExpanded = (sectionId) => {
