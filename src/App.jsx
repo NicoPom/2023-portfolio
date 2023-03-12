@@ -14,10 +14,16 @@ import { uiSnippetsData } from "./data/uiSnippet";
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
   const { toggle, isNavOpen } = useContext(ProjectContext);
+  const [isSectionChanging, setIsSectionChanging] = useState(false);
 
   // Function to handle clicks on the navigation bar
   const handleClick = (id) => {
+    // Set flag to animate navbar display
+    setIsSectionChanging(true);
+
     setActiveSection(id);
+    // Remove flag after animation
+    setTimeout(() => setIsSectionChanging(false), 500);
     // Close the navigation bar if it's open
     if (isNavOpen) toggle("nav");
     // Scroll to the section
@@ -39,8 +45,17 @@ const App = () => {
               rect.bottom >= window.innerHeight / 2
             ) {
               // Prevent clipping effect when scrolling between projects
-              if (section.id !== "projects" && section.id !== "ui") {
+              if (
+                section.id !== "projects" &&
+                section.id !== "ui" &&
+                activeSection !== section.id
+              ) {
+                // set flag to animate navbar display
+                setIsSectionChanging(true);
+
                 setActiveSection(section.id);
+                // remove flag after animation
+                setTimeout(() => setIsSectionChanging(false), 500);
               }
             }
           }
@@ -74,6 +89,8 @@ const App = () => {
         activeSection={activeSection}
         setActiveSection={handleClick}
         sectionsData={sectionsData}
+        isSectionChanging={isSectionChanging}
+        setIsSectionChanging={setIsSectionChanging}
       />
     </div>
   );

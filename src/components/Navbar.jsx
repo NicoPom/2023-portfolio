@@ -10,12 +10,15 @@ import { uiSnippetsData } from "../data/uiSnippet";
 
 import "../styles/navbar.css";
 
-const Navbar = ({ activeSection, setActiveSection }) => {
+const Navbar = ({
+  activeSection,
+  setActiveSection,
+  isSectionChanging,
+  setIsSectionChanging,
+}) => {
   const { isNavOpen, isInfoOpen, toggle } = useContext(ProjectContext);
 
   const [expandedSections, setExpandedSections] = useState([]);
-
-  const [isSectionChanging, setIsSectionChanging] = useState(false);
 
   const handleNavLinkClick = (section) => {
     // those are the sections that have a dropdown menu
