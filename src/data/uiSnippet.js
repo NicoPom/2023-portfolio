@@ -26,6 +26,15 @@ const uiSnippetsData = [
     details: `This is a cursor trail that I created to practice my and GSAP skills.`,
     stack: "HTML5 | CSS3 | JS | GSAP | Netlify",
   },
+  {
+    id: "hover text roll",
+    title: "hover text roll",
+    iframe: "https://hover-text-roll.netlify.app/",
+    liveSite: "https://hover-text-roll.netlify.app/",
+    github: "https://github.com/NicoPom/hover-text-roll",
+    details: `This is a hover text roll that I created to practice my CSS skills.`,
+    stack: "HTML5 | CSS3 | JS | Netlify",
+  },
 ];
 
 export { uiSnippetsData };
